@@ -1,0 +1,24 @@
+name: Clean external contributions from personal website repository
+
+on:
+  issues:
+    types: [opened]
+  pull_request_target:
+    types: [opened]
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  clean:
+    name: Clean contribution
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clean contribution
+        uses: dessant/repo-lockdown@v2
+        with:
+          issue-comment: This repository is a personal website and as such it does not accept bug reports.
+          pr-comment: This repository is a personal website and as such it does not accept pull requests.
+    
+    
