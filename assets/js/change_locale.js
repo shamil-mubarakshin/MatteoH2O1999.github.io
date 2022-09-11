@@ -1,7 +1,7 @@
 let DEFAULT_LOCALE = "en-us";
 let SUPPORTED_LOCALES = ["en-us", "it-it"]
 
-function initializeLocale() {
+export function initializeLocale() {
     if (localStorage.getItem('locale') != null) {
         updateLocale();
         return;
@@ -18,7 +18,7 @@ function initializeLocale() {
     localStorage.setItem('locale', DEFAULT_LOCALE);
 }
 
-function changeLocale(newLocale) {
+export function changeLocale(newLocale) {
     showLocaleSelector();
     if (newLocale == localStorage.getItem('locale')) {
         return;
@@ -36,7 +36,7 @@ function updateLocale() {
     console.log("Update locale: ".concat(localStorage.getItem('locale')));
 }
 
-function showLocaleSelector() {
+export function showLocaleSelector() {
     document.getElementById("language-menu").classList.toggle("show");
     document.getElementById("shadow-menu").classList.toggle("show");
 }
