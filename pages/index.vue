@@ -1,7 +1,7 @@
 <template>
   <div class="main-page-photo">
-      <img src="~/assets/homePage/homePagePhoto.png" alt="Matteo's Photo" style="width: 90%;">
-      <h1 class="main-page-name">
+      <img src="~/assets/homePage/homePagePhoto.png" alt="Matteo's Photo" style="width: 90%;" class="main-page-central-photo" id="main-page-central-photo" onload="enterMainPage();">
+      <h1 class="main-page-name" id="main-page-central-name">
           MATTEO DELL'ACQUA
       </h1>
   </div>
@@ -17,6 +17,8 @@ export default {
   head() {
     return {
       title: "Matteo Dell'Acqua",
+      script: [
+        {src: "/js/index_js_inject.js", pbody: true}
       ]
     }
   }
@@ -32,5 +34,44 @@ export default {
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translateX(3vw);
+    opacity: 0;
+}
+
+.main-page-central-photo {
+  transform: translateX(-3vw);
+  opacity: 0;
+}
+
+@keyframes mainImageEntrance {
+	0% {
+		opacity: 0;
+		transform: translateX(-3vw);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes mainNameEntrance {
+	0% {
+		opacity: 0;
+		transform: translateX(3vw);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.main-page-central-photo.enter {
+  animation: mainImageEntrance 1s ease-out 0s 1 normal forwards;
+}
+
+.main-page-name.enter {
+  animation: mainNameEntrance 1s ease-out 0s 1 normal forwards;
 }
 </style>
