@@ -20,5 +20,7 @@ export default {
 <style>
 body {
     font-family: Merriweather, Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: rgb(19, 26, 42);
 }
 </style>
