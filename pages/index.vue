@@ -36,6 +36,7 @@ export default {
     left: 50%;
     transform: translateX(3vw);
     opacity: 0;
+    font-size: 3vw;
 }
 
 .main-page-central-photo {
