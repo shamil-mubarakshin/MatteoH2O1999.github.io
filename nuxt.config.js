@@ -49,5 +49,7 @@ export default {
   generate: {
     fallback: true,
     subFolders: false
-  }
+  },
+
+  loading: '~/components/loader.vue'
 }
