@@ -47,32 +47,32 @@
 </template>
 
 <script>
-import * as change_locale from "../assets/js/change_locale"
-import * as active_page from "../assets/js/active_page"
-export default {
-    data() {
-        return {
-            name: "Navbar"
-        }
-    },
-    mounted() {
-        change_locale.initializeLocale();
-        active_page.updateActivePage();
-    },
-    methods: {
-        showLocaleSelector() {
-            change_locale.showLocaleSelector();
+    import * as change_locale from "../assets/js/change_locale"
+    import * as active_page from "../assets/js/active_page"
+    export default {
+        data() {
+            return {
+                name: "Navbar"
+            }
         },
-        changeLocale(locale) {
-            change_locale.changeLocale(locale);
-        }
-    },
-    watch: {
-        $route (to, from) {
+        mounted() {
+            change_locale.initializeLocale();
             active_page.updateActivePage();
+        },
+        methods: {
+            showLocaleSelector() {
+                change_locale.showLocaleSelector();
+            },
+            changeLocale(locale) {
+                change_locale.changeLocale(locale);
+            }
+        },
+        watch: {
+            $route (to, from) {
+                active_page.updateActivePage();
+            }
         }
     }
-}
 </script>
 
 <style>

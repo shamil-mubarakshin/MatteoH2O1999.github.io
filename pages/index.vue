@@ -1,28 +1,28 @@
 <template>
-  <div class="main-page-photo">
-      <img src="~/assets/homePage/homePagePhoto.png" alt="Matteo's Photo" style="width: 90%;" class="main-page-central-photo" id="main-page-central-photo" onload="enterMainPage();">
-      <h1 class="main-page-name" id="main-page-central-name">
-          MATTEO DELL'ACQUA
-      </h1>
-  </div>
+    <div class="main-page-photo">
+        <img src="~/assets/homePage/homePagePhoto.png" alt="Matteo's Photo" style="width: 90%;" class="main-page-central-photo" id="main-page-central-photo" onload="enterMainPage();">
+        <h1 class="main-page-name" id="main-page-central-name">
+            MATTEO DELL'ACQUA
+        </h1>
+    </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      name: "IndexPage"
+    export default {
+        data() {
+            return {
+                name: "IndexPage"
+            }
+        },
+        head() {
+            return {
+                title: "Matteo Dell'Acqua",
+                script: [
+                    {src: "/js/index_js_inject.js", pbody: true}
+                ]
+            }
+        }
     }
-  },
-  head() {
-    return {
-      title: "Matteo Dell'Acqua",
-      script: [
-        {src: "/js/index_js_inject.js", pbody: true}
-      ]
-    }
-  }
-}
 </script>
 
 <style>

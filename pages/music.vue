@@ -3,16 +3,16 @@
 </template>
 
 <script>
-export default {
-    data() {
-        return {
-            name: "MusicPage"
-        }
-    },
-    head() {
-        return {
-            title: "Matteo Dell'Acqua | Music"
+    export default {
+        data() {
+            return {
+                name: "MusicPage"
+            }
+        },
+        head() {
+            return {
+                title: "Matteo Dell'Acqua | Music"
+            }
         }
     }
-}
 </script>

@@ -11,13 +11,13 @@
 </template>
 
 <script>
-export default {
-    data() {
-        return {
-            name: "SocialFooter"
-        }
-    },
-}
+    export default {
+        data() {
+            return {
+                name: "SocialFooter"
+            }
+        },
+    }
 </script>
 
 <style>
@@ -25,7 +25,7 @@ export default {
     background-color: black;
 }
 
-.social-icons ion-icon {
+.social-icons .social-icon {
     font-size: 25px;
 }
 
