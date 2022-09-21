@@ -14,10 +14,6 @@
             return {
                 link: [
                     {rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Merriweather"}
-                ],
-                script: [
-                    {type: "module", src: "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js", body: true},
-                    {nomodule: true, src:"https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js", body: true}
                 ]
             }
         }

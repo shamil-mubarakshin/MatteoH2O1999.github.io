@@ -3,7 +3,7 @@
         <ul>
             <li>
                 <a href="">
-                    <ion-icon name="logo-youtube"></ion-icon>
+                    <font-awesome-icon icon="fa-brands fa-youtube" class="social-icon"></font-awesome-icon>
                 </a>
             </li>
         </ul>
