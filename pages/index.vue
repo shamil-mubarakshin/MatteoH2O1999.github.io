@@ -1,6 +1,6 @@
 <template>
     <div class="main-page-photo">
-        <nuxt-img format="webp" sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw xxl:100vw" src="/homePage/homePagePhoto.png" alt="Matteo's Photo" style="width: 90%;" class="main-page-central-photo" id="main-page-central-photo" onload="enterMainPage();" />
+        <nuxt-img format="webp" sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw xxl:100vw" src="/homePage/homePagePhoto.png" alt="Matteo's Photo" style="width: 90%;" class="main-page-central-photo" id="main-page-central-photo" />
         <h1 class="main-page-name" id="main-page-central-name">
             MATTEO DELL'ACQUA
         </h1>
@@ -8,6 +8,11 @@
 </template>
 
 <script>
+    function enterMainPage() {
+        document.getElementById("main-page-central-photo").classList.add("enter");
+        document.getElementById("main-page-central-name").classList.add("enter");
+    }
+    
     export default {
         data() {
             return {
@@ -21,7 +26,10 @@
                     {src: "/js/index_js_inject.js", pbody: true}
                 ]
             }
-        }
+        },
+        mounted() {
+            enterMainPage();
+        },
     }
 </script>
 
