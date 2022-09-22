@@ -5,6 +5,9 @@
                 <a href="">
                     <font-awesome-icon icon="fa-brands fa-youtube" class="social-icon"></font-awesome-icon>
                 </a>
+                <a href="">
+                    <font-awesome-icon icon="fa-brands fa-github" class="social-icon"></font-awesome-icon>
+                </a>
             </li>
         </ul>
     </div>
