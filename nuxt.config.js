@@ -39,6 +39,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxt/image'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -51,5 +52,8 @@ export default {
     subFolders: false
   },
 
-  loading: '~/components/loader.vue'
+  loading: '~/components/loader.vue',
+
+  image: {
+  }
 }
