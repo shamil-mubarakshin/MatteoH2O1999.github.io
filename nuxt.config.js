@@ -3,21 +3,30 @@ export default {
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    title: "Matteo Dell'Acqua",
-    htmlAttrs: {
-      lang: 'en'
-    },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
-      {"http-equiv": "X-UA-Compatible", content: "IE=edge"},
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+  head() {
+    let i18nHead = {htmlAttrs: [], meta: [], link: []};
+    if (this.$nuxtI18nHead) {
+      i18nHead = this.$nuxtI18nHead({addSeoAttributes: true})
+    }
+    return {
+      title: "Matteo Dell'Acqua",
+      htmlAttrs: {
+        lang: 'en',
+        ...i18nHead.htmlAttrs
+      },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: '' },
+        { name: 'format-detection', content: 'telephone=no' },
+        {"http-equiv": "X-UA-Compatible", content: "IE=edge"},
+        ...i18nHead.meta
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        ...i18nHead.link
+      ],
+    }
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -39,7 +48,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxtjs/i18n'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -55,5 +65,25 @@ export default {
   loading: '~/components/loader.vue',
 
   image: {
-  }
+  },
+
+  i18n: {
+    locales: [
+      {
+        code: 'en-us',
+        iso: 'en-US',
+        isCatchallLocale: true,
+        file: 'en-us.js'
+      },
+      {
+        code: 'it-it',
+        iso: 'it-IT',
+        file: 'it-it.js'
+      }
+    ],
+    defaultLocale: 'en-us',
+    strategy: 'prefix',
+    lazy: true,
+    langDir: '~/lang/'
+    }
 }

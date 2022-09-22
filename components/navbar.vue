@@ -3,39 +3,39 @@
         <nav class="nav-bar" id="navigationBar">
             <ul>
                 <li class="logo">
-                    <NuxtLink to="/" id="indexRef">
+                    <NuxtLink :to="localePath('/')" id="indexRef">
                         <nuxt-img format="webp" src="/navbar/logo.png" class="navbar-logo"/>
                     </NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink to="/home" id="homeRef">
-                        Home
+                    <NuxtLink :to="localePath('/home')" id="homeRef">
+                        {{ $t('navbar.home') }}
                     </NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink to="/about" id="aboutRef">
-                        About
+                    <NuxtLink :to="localePath('/about')" id="aboutRef">
+                        {{ $t('navbar.about') }}
                     </NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink to="/projects" id="projectsRef">
-                        Projects
+                    <NuxtLink :to="localePath('/projects')" id="projectsRef">
+                        {{ $t('navbar.projects') }}
                     </NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink to="/music" id="musicRef">
-                        Music
+                    <NuxtLink :to="localePath('/music')" id="musicRef">
+                        {{ $t('navbar.music') }}
                     </NuxtLink>
                 </li>
                 <li class="localeSelector">
                     <a class="dropdown-locale" id="language-selector" @click="showLocaleSelector();">
-                        Choose language
+                        {{ $t('navbar.language') }}
                     </a>
                     <div class="dropdown-locale-content" id="language-menu">
-                        <a @click="changeLocale('en-us');" id="en-us">
+                        <a @click.prevent.stop="setLocale('en-us')" id="en-us">
                             English
                         </a>
-                        <a @click="changeLocale('it-it');" id="it-it">
+                        <a @click.prevent.stop="setLocale('it-it')" id="it-it">
                             Italiano
                         </a>
                     </div>
@@ -56,20 +56,23 @@
             }
         },
         mounted() {
-            change_locale.initializeLocale();
             active_page.updateActivePage();
+            change_locale.showActiveLocale(this.$i18n.locale);
         },
         methods: {
             showLocaleSelector() {
                 change_locale.showLocaleSelector();
             },
-            changeLocale(locale) {
-                change_locale.changeLocale(locale);
+            setLocale(locale) {
+                this.showLocaleSelector();
+                this.$i18n.setLocale(locale);
+                change_locale.showActiveLocale(locale);
             }
         },
         watch: {
             $route (to, from) {
                 active_page.updateActivePage();
+                change_locale.showActiveLocale(this.$i18n.locale);
             }
         }
     }
