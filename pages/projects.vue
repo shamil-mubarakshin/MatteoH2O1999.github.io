@@ -11,7 +11,7 @@
         },
         head() {
             return {
-                title: "Matteo Dell'Acqua | Projects"
+                title: "[WIP] Matteo Dell'Acqua | Projects"
             }
         }
     }

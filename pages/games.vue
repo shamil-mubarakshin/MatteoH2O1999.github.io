@@ -11,7 +11,7 @@
         },
         head() {
             return {
-                title: "Matteo Dell'Acqua | Games"
+                title: "[WIP] Matteo Dell'Acqua | Games"
             }
         }
     }

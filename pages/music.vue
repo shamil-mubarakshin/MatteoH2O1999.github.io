@@ -11,7 +11,7 @@
         },
         head() {
             return {
-                title: "Matteo Dell'Acqua | Music"
+                title: "[WIP] Matteo Dell'Acqua | Music"
             }
         }
     }

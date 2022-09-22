@@ -21,10 +21,7 @@
         },
         head() {
             return {
-                title: "Matteo Dell'Acqua",
-                script: [
-                    {src: "/js/index_js_inject.js", pbody: true}
-                ]
+                title: "[WIP] Matteo Dell'Acqua"
             }
         },
         mounted() {
