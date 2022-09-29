@@ -11,7 +11,6 @@ export default {
     return {
       title: "Matteo Dell'Acqua",
       htmlAttrs: {
-        lang: 'en',
         ...i18nHead.htmlAttrs
       },
       meta: [
