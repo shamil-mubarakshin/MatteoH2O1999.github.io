@@ -1,0 +1,38 @@
+name: Clean external contributions from personal website repository
+
+on:
+  pull_request:
+
+permissions:
+  pull-requests: write
+
+jobs:
+  clean:
+    name: Clean contribution
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clean contribution
+        if: github.event.pull_request.user.login != "MatteoH2O1999" && github.event.pull_request.user.login != "dependabot"
+        uses: dessant/repo-lockdown@v2
+        with:
+          pr-comment: This repository is a personal website and as such it does not accept pull requests.
+
+  test:
+    name: Test website
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login == "MatteoH2O1999" || github.event.pull_request.user.login == "dependabot"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+      - name: Install production and development dependencies
+        run: npm ci --include=dev
+      - name: Run tests
+        run: npm run test
+

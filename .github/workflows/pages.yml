@@ -12,11 +12,33 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+env:
+  NODE_VERSION: 16
+
 jobs:
+  test:
+    name: Test website
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      - name: Install production and development dependencies
+        run: npm ci --include=dev
+      - name: Run tests
+        run: npm run test
+
   # Build website and upload artifact
   build:
     name: Build website
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: Checkout website repository
         uses: actions/checkout@v3
@@ -25,10 +47,10 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-      - name: Install npm dependencies
-        run: npm ci
+      - name: Install production dependencies
+        run: npm ci --omit=dev
       - name: Build with Nuxt
         run: npm run generate
       - name: Upload website artifact
