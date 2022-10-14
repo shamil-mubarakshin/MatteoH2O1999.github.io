@@ -1,5 +1,11 @@
 <template>
-    <h1>Music</h1>
+    <div class="music-credits">
+        <MusicCreditTab subFolder="movies" :tabTitle="$t('musicCreditsTabs.movies')" />
+        <MusicCreditTab subFolder="games" :tabTitle="$t('musicCreditsTabs.games')" />
+        <MusicCreditTab subFolder="albums" :tabTitle="$t('musicCreditsTabs.albums')" />
+        <MusicCreditTab subFolder="singles" :tabTitle="$t('musicCreditsTabs.singles')" />
+        <MusicCreditTab subFolder="unfinished" :tabTitle="$t('musicCreditsTabs.unfinished')" />
+    </div>
 </template>
 
 <script>

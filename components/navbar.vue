@@ -97,6 +97,7 @@
     .nav-bar ul {
         flex-direction: column;
         height: fit-content;
+        padding: 0px;
     }
 
     .localeSelector {
