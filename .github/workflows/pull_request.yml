@@ -1,26 +1,19 @@
-name: Clean external contributions from personal website repository
+name: Check pull request
 
 on:
   pull_request:
 
 permissions:
   pull-requests: write
+  contents: read
+
+env:
+  PR_AUTHOR: ${{ github.event.pull_request.user.login }}
 
 jobs:
-  clean:
-    name: Clean contribution
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clean contribution
-        if: github.event.pull_request.user.login != "MatteoH2O1999" && github.event.pull_request.user.login != "dependabot"
-        uses: dessant/repo-lockdown@v2
-        with:
-          pr-comment: This repository is a personal website and as such it does not accept pull requests.
-
   test:
     name: Test website
     runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == "MatteoH2O1999" || github.event.pull_request.user.login == "dependabot"
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -35,4 +28,18 @@ jobs:
         run: npm ci --include=dev
       - name: Run tests
         run: npm run test
+
+  clean:
+    name: Clean contribution if not authorized
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Detect pull request author
+        run: echo "Pull request author is $PR_AUTHOR"
+      - name: Clean contribution
+        if: ${{ github.event.pull_request.user.login != 'MatteoH2O1999' && github.event.pull_request.user.login != 'dependabot[bot]' }}
+        uses: dessant/repo-lockdown@v2
+        with:
+          pr-comment: This repository is a personal website and as such it does not accept pull requests.
+          log-output: true
 
