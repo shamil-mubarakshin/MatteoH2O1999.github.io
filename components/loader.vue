@@ -1,6 +1,7 @@
 <template>
     <div v-if="loading" class="loading-page">
-        Loading...
+        <div class="shadow show">
+        </div>
     </div>
 </template>
 
@@ -17,6 +18,10 @@
             },
             finish() {
                 this.loading = false;
+            },
+            fail(error) {
+            },
+            increase(num) {
             }
         },
     }
