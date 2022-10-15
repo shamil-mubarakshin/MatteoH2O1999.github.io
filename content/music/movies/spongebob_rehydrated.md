@@ -1,3 +1,3 @@
 ---
-imgPath: "/music/cards/spongebob_movie_rehydrated.jpg"
+imgPath: "/music/cards/movies/spongebob_movie_rehydrated.jpg"
 ---
