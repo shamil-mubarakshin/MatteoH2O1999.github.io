@@ -84,6 +84,7 @@ export default {
     defaultLocale: 'en-us',
     strategy: 'prefix',
     lazy: true,
-    langDir: '~/lang/'
+    langDir: '~/lang/',
+    baseUrl:'https://matteoh2o1999.github.io'
     }
 }
