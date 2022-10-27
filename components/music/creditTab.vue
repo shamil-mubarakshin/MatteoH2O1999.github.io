@@ -3,7 +3,7 @@
         <h1>{{ tabTitle }}</h1>
         <div class="cards-tab">
             <div v-for="card in this.cards" :key="card.id" class="card-div">
-                <MusicMovieCard :path="card.imgPath" />
+                <MusicMovieCard :data="card" />
             </div>
         </div>
     </div>
@@ -18,7 +18,7 @@
             }
         },
         async fetch() {
-            this.cards = await this.$content("music", this.subFolder).only("imgPath").fetch().catch((err) => {this.cards = []});
+            this.cards = await this.$content("music", this.subFolder).fetch().catch((err) => {this.cards = []});
         },
         props: ['subFolder', 'tabTitle']
     }
