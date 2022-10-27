@@ -49,5 +49,6 @@
 
 .card-div img {
     width: 100%;
+    aspect-ratio: 2 / 3;
 }
 </style>
