@@ -32,7 +32,7 @@ jobs:
       - name: Install production and development dependencies
         run: npm ci --include=dev
       - name: Run tests
-        run: npm run test
+        run: npm run test-ci
 
   # Build website and upload artifact
   build:
