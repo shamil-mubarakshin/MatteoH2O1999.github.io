@@ -29,6 +29,8 @@ jobs:
         run: npm ci --include=dev
       - name: Run tests
         run: npm run test-ci
+        env:
+          FORCE_COLOR: 3
 
   build:
     name: Test build website
