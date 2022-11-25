@@ -1,8 +1,16 @@
 <template>
     <div class="additional-info-tab">
-        <h1>{{ title }}</h1>
-        {{ description }}
-        <MusicInfoWindowCloseButton @closeTab="closeTab()" class="close-button-div"/>
+        <div class="info-window-header">
+            <h2>{{ title }}</h2>
+            <MusicInfoWindowCloseButton @closeTab="closeTab()" class="close-button-div"/>
+        </div>
+        <p>
+            <nuxt-img format="webp" sizes="xs:100px sm:100px md:100px lg:10vw xl:10vw xxl:10vw" :src="this.data.imgPath" class="info-window-image" />
+            {{ description }}
+        </p>
+        <div class="info-window-links">
+            Links
+        </div>
     </div>
 </template>
 
@@ -33,15 +41,26 @@
 <style>
 .additional-info-tab {
     background-color: darkgrey;
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
 }
 
-.close-button-div {
-    position: absolute;
-    top: 0;
-    right: 0;
+.additional-info-tab h2 {
+    margin: 5px;
 }
 
-.additional-info-tab h1 {
-    margin-top: 0;
+.info-window-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.info-window-image {
+    width: 10vw;
+    aspect-ratio: 2 / 3;
+    float: left;
+    min-width: 100px;
 }
 </style>
