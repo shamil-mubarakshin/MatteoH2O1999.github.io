@@ -4,12 +4,18 @@
             <h2>{{ title }}</h2>
             <MusicInfoWindowCloseButton @closeTab="closeTab()" class="close-button-div"/>
         </div>
-        <p>
-            <nuxt-img format="webp" sizes="xs:100px sm:100px md:100px lg:10vw xl:10vw xxl:10vw" :src="this.data.imgPath" class="info-window-image" />
-            {{ description }}
-        </p>
-        <div class="info-window-links">
-            Links
+        <div class="info-window-content">
+            <div class="info-window-image-div">
+                <nuxt-img format="webp" sizes="xs:90vw sm:90vw md:25vw lg:25vw xl:25vw xxl:25vw" :src="this.data.imgPath" class="info-window-image" />
+            </div>
+            <div class="info-window-text">
+                <div>
+                    {{ description }}
+                </div>
+                <div>
+                    Links
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -43,7 +49,9 @@
     background-color: darkgrey;
     display: flex;
     flex-direction: column;
-    min-width: 250px;
+    max-height: 90vh;
+    max-width: 90vw;
+    width: 150vh;
 }
 
 .additional-info-tab h2 {
@@ -54,13 +62,46 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+}
+
+.info-window-content {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    overflow: auto;
 }
 
 .info-window-image {
-    width: 10vw;
+    display: block;
+    width: 100%;
     aspect-ratio: 2 / 3;
-    float: left;
-    min-width: 100px;
+}
+
+.info-window-image-div {
+    width: min(25vw, 40vh);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.info-window-text {
+    overflow: auto;
+    flex-grow: 0;
+}
+
+@media screen and (max-width:640px) {
+    .info-window-content {
+        flex-direction: column;
+        align-items: center;
+        overflow: auto;
+    }
+
+    .info-window-image-div {
+        width: 100%;
+        overflow: unset;
+    }
+
+    .info-window-text {
+        overflow: unset;
+    }
 }
 </style>
