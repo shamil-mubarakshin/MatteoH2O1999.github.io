@@ -144,6 +144,7 @@
 
 .localeSelector {
     margin-left: auto;
+    text-align: center;
 }
 
 .nav-bar .localeSelector .dropdown-locale {
