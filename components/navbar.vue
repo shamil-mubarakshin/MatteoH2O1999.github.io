@@ -177,7 +177,6 @@
 }
 
 .shadow {
-    /*display: none;*/
     background: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0px;
@@ -191,7 +190,6 @@
 }
 
 .shadow.show {
-    /*display: inline;*/
     visibility: visible;
     opacity: 1;
     transition: opacity ease-out 0.25s, visibility ease 0s;
