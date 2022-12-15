@@ -111,6 +111,7 @@
     .nav-bar ul li.logo a img {
         height: auto;
         width: 100%;
+        max-width: 200px;
     }
 }
 
