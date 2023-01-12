@@ -21,7 +21,7 @@ links:
         - name: Brain Control Devices
           order: 2
           url:
-            Youtube: https://www.youtube.com/watch?v=SX3TvS3rsWI&t=1s
+            Youtube: https://www.youtube.com/watch?v=SX3TvS3rsWI
         - name: King Sized Helmet
           order: 3
           url:
