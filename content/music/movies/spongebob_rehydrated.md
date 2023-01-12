@@ -17,13 +17,13 @@ links:
         - name: I Have a Crab to Cook
           order: 1
           url:
-            youtube: https://www.youtube.com/watch?v=kzkq0cxqs9w
+            Youtube: https://www.youtube.com/watch?v=kzkq0cxqs9w
         - name: Brain Control Devices
           order: 2
           url:
-            youtube: https://www.youtube.com/watch?v=SX3TvS3rsWI&t=1s
+            Youtube: https://www.youtube.com/watch?v=SX3TvS3rsWI&t=1s
         - name: King Sized Helmet
           order: 3
           url:
-            youtube: https://www.youtube.com/watch?v=qthwh68HRCw
+            Youtube: https://www.youtube.com/watch?v=qthwh68HRCw
 ---

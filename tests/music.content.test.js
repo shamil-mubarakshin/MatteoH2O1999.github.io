@@ -371,7 +371,16 @@ describe('Music credits', () => {
                     })
 
                     test('each track has at least one valid platform', () => {
-                        throw "TODO";
+                        tracks.forEach((track) => {
+                            expect(track).toHaveProperty('url');
+                            const url = track.url;
+                            const platforms = Object.keys(url);
+                            expect(platforms.length).toBeGreaterThan(0);
+                            platforms.forEach((plat) => {
+                                expect(musicPlatforms).toHaveProperty(plat);
+                                expect(url[plat]).toEqual(expect.stringContaining(musicPlatforms[plat]));
+                            })
+                        })
                     })
                 })
             })
