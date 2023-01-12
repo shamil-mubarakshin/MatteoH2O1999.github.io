@@ -34,4 +34,9 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+
+:root {
+    --youtube-color: #b61e1e;
+    --github-color: #eeeeee;
+}
 </style>

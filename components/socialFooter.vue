@@ -3,10 +3,10 @@
         <ul>
             <li>
                 <a href="https://www.youtube.com/channel/UCwYnDSpaMPxS6kJpy8vQgNw" target="_blank">
-                    <font-awesome-icon icon="fa-brands fa-youtube" class="social-icon"></font-awesome-icon>
+                    <font-awesome-icon icon="fa-brands fa-youtube" class="social-icon youtube-social"></font-awesome-icon>
                 </a>
                 <a href="https://github.com/MatteoH2O1999" target="_blank">
-                    <font-awesome-icon icon="fa-brands fa-github" class="social-icon"></font-awesome-icon>
+                    <font-awesome-icon icon="fa-brands fa-github" class="social-icon github-social"></font-awesome-icon>
                 </a>
             </li>
         </ul>
@@ -43,5 +43,13 @@
 
 .social-icons ul li a {
     text-decoration: none;
+}
+
+.youtube-social {
+    color: var(--youtube-color);
+}
+
+.github-social {
+    color: var(--github-color);
 }
 </style>
