@@ -1,11 +1,11 @@
 <template>
     <div>
         <h3 v-if="this.playlists.length > 0">
-            Listen
+            {{ $t('musicCreditsTabs.listen') }}
             <MusicLinkIcon v-for="playlist in this.playlists" :key="playlist.id" class="playlist-link" :platform="playlist.platform" :url="playlist.url"/>
         </h3>
         <h3 v-else>
-            Listen
+            {{ $t('musicCreditsTabs.listen') }}
             <MusicLinkIcon v-for="platform in Object.keys(tracks[0].url)" :key="platform.id" class="playlist-link" :platform="platform" :url="tracks[0].url[platform]" />
         </h3>
         <table v-if="this.playlists.length > 0">

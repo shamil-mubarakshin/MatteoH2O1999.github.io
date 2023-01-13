@@ -4,7 +4,8 @@ let credits_en_us = {
     "games": "Videogames",
     "albums": "Albums",
     "singles": "Singles",
-    "unfinished": "Unfinished Projects"
+    "unfinished": "Unfinished Projects",
+    "listen": "Listen"
 }
 
 let credits_it_it = {
@@ -13,7 +14,8 @@ let credits_it_it = {
     "games": "Videogiochi",
     "albums": "Album",
     "singles": "Singoli",
-    "unfinished": "Progetti Incompiuti"
+    "unfinished": "Progetti Incompiuti",
+    "listen": "Ascolta"
 }
 
 export {
