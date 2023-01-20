@@ -11,26 +11,26 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                name: "MovieCard"
-            }
+export default {
+    data() {
+        return {
+            name: "MovieCard"
+        }
+    },
+    props: ['data'],
+    methods: {
+        showInfo() {
+            this.$refs.shadow.classList.add('show');
+            this.$refs.infoWindow.classList.add('show');
+            document.body.style.overflow = 'hidden';
         },
-        props: ['data'],
-        methods: {
-            showInfo() {
-                this.$refs.shadow.classList.add('show');
-                this.$refs.infoWindow.classList.add('show');
-                document.body.style.overflow = 'hidden';
-            },
-            hideInfo() {
-                this.$refs.shadow.classList.remove('show');
-                this.$refs.infoWindow.classList.remove('show');
-                document.body.style.overflow = 'auto';
-            }
+        hideInfo() {
+            this.$refs.shadow.classList.remove('show');
+            this.$refs.infoWindow.classList.remove('show');
+            document.body.style.overflow = 'auto';
         }
     }
+}
 </script>
 
 <style>

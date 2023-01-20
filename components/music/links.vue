@@ -22,25 +22,25 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                name: 'musicLinks'
-            }
+export default {
+    data() {
+        return {
+            name: 'musicLinks'
+        }
+    },
+    props: ['data'],
+    computed: {
+        playlists() {
+            return this.data.links.playlists;
         },
-        props: ['data'],
-        computed: {
-            playlists() {
-                return this.data.links.playlists;
-            },
-            tracks() {
-                return this.data.links.tracks;
-            },
-            useExplicitTrackNumbers() {
-                return this.data.links['track-order'];
-            }
+        tracks() {
+            return this.data.links.tracks;
+        },
+        useExplicitTrackNumbers() {
+            return this.data.links['track-order'];
         }
     }
+}
 </script>
 
 <style>

@@ -6,23 +6,23 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                loading: false
-            };
+export default {
+    data() {
+        return {
+            loading: false
+        };
+    },
+    methods: {
+        start() {
+            this.loading = true;
         },
-        methods: {
-            start() {
-                this.loading = true;
-            },
-            finish() {
-                this.loading = false;
-            },
-            fail(error) {
-            },
-            increase(num) {
-            }
+        finish() {
+            this.loading = false;
         },
-    }
+        fail(error) {
+        },
+        increase(num) {
+        }
+    },
+}
 </script>

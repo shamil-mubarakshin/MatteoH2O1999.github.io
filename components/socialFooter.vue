@@ -14,13 +14,13 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                name: "SocialFooter"
-            }
-        },
-    }
+export default {
+    data() {
+        return {
+            name: "SocialFooter"
+        }
+    },
+}
 </script>
 
 <style>

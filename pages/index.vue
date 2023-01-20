@@ -8,28 +8,28 @@
 </template>
 
 <script>
-    function enterMainPageAnimation() {
-        document.getElementById("main-page-central-photo").classList.add("enter");
-        document.getElementById("main-page-central-name").classList.add("enter");
-    }
-    
-    export default {
-        data() {
-            return {
-                name: "IndexPage"
-            }
-        },
-        head() {
-            return {
-                title: "[WIP] Matteo Dell'Acqua"
-            }
-        },
-        methods: {
-            enterMainPage() {
-                enterMainPageAnimation();
-            }
-        },
-    }
+function enterMainPageAnimation() {
+    document.getElementById("main-page-central-photo").classList.add("enter");
+    document.getElementById("main-page-central-name").classList.add("enter");
+}
+
+export default {
+    data() {
+        return {
+            name: "IndexPage"
+        }
+    },
+    head() {
+        return {
+            title: "[WIP] Matteo Dell'Acqua"
+        }
+    },
+    methods: {
+        enterMainPage() {
+            enterMainPageAnimation();
+        }
+    },
+}
 </script>
 
 <style>

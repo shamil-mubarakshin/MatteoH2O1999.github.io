@@ -47,35 +47,35 @@
 </template>
 
 <script>
-    import * as change_locale from "../assets/js/change_locale"
-    import * as active_page from "../assets/js/active_page"
-    export default {
-        data() {
-            return {
-                name: "Navbar"
-            }
+import * as change_locale from "../assets/js/change_locale"
+import * as active_page from "../assets/js/active_page"
+export default {
+    data() {
+        return {
+            name: "Navbar"
+        }
+    },
+    mounted() {
+        active_page.updateActivePage();
+        change_locale.showActiveLocale(this.$i18n.locale);
+    },
+    methods: {
+        showLocaleSelector() {
+            change_locale.showLocaleSelector();
         },
-        mounted() {
+        setLocale(locale) {
+            this.showLocaleSelector();
+            this.$i18n.setLocale(locale);
+            change_locale.showActiveLocale(locale);
+        }
+    },
+    watch: {
+        $route (to, from) {
             active_page.updateActivePage();
             change_locale.showActiveLocale(this.$i18n.locale);
-        },
-        methods: {
-            showLocaleSelector() {
-                change_locale.showLocaleSelector();
-            },
-            setLocale(locale) {
-                this.showLocaleSelector();
-                this.$i18n.setLocale(locale);
-                change_locale.showActiveLocale(locale);
-            }
-        },
-        watch: {
-            $route (to, from) {
-                active_page.updateActivePage();
-                change_locale.showActiveLocale(this.$i18n.locale);
-            }
         }
     }
+}
 </script>
 
 <style>

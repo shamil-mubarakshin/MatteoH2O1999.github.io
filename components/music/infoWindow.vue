@@ -21,27 +21,27 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                name: "InfoWindow"
-            }
+export default {
+    data() {
+        return {
+            name: "InfoWindow"
+        }
+    },
+    props: ['data'],
+    methods: {
+        closeTab() {
+            this.$emit('closeTab');
+        }
+    },
+    computed: {
+        title() {
+            return this.data.lang[this.$i18n.locale].title;
         },
-        props: ['data'],
-        methods: {
-            closeTab() {
-                this.$emit('closeTab');
-            }
-        },
-        computed: {
-            title() {
-                return this.data.lang[this.$i18n.locale].title;
-            },
-            description() {
-                return this.data.lang[this.$i18n.locale].description;
-            }
+        description() {
+            return this.data.lang[this.$i18n.locale].description;
         }
     }
+}
 </script>
 
 <style>

@@ -10,18 +10,18 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                name: "CreditTab",
-                cards: []
-            }
-        },
-        async fetch() {
-            this.cards = await this.$content("music", this.subFolder).sortBy('releaseDate', 'desc').fetch().catch((err) => {this.cards = []});
-        },
-        props: ['subFolder', 'tabTitle']
-    }
+export default {
+    data() {
+        return {
+            name: "CreditTab",
+            cards: []
+        }
+    },
+    async fetch() {
+        this.cards = await this.$content("music", this.subFolder).sortBy('releaseDate', 'desc').fetch().catch((err) => {this.cards = []});
+    },
+    props: ['subFolder', 'tabTitle']
+}
 </script>
 
 <style>
