@@ -1,18 +1,39 @@
 <template>
-    <h1>Home</h1>
+    <div>
+        <BlogArticleList :articles="this.articles" />
+    </div>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                name: "HomePage"
-            }
-        },
-        head() {
-            return {
-                title: "[WIP] Matteo Dell'Acqua | Home"
-            }
+const articleLimit = 10;
+export default {
+    data() {
+        return {
+            name: "HomePage",
+        }
+    },
+    head() {
+        return {
+            title: "[WIP] Matteo Dell'Acqua | Home"
+        }
+    },
+    async asyncData(context) {
+        let articles = [];
+        const content = await context.$content('articles', context.i18n.locale, {deep: true}).limit(articleLimit).fetch();
+        articles.push(...content);
+        const music = await context.$content('music', {deep: true}).limit(articleLimit).fetch();
+        articles.push(...music);
+        articles = articles.sort((a, b) => {
+            const dateA = new Date(a.createdAt);
+            const dateB = new Date(b.createdAt);
+            return dateB.getTime() - dateA.getTime();
+        })
+        if (articles.length > articleLimit) {
+            articles = articles.slice(0, articleLimit - 1);
+        }
+        return {
+            articles
         }
     }
+}
 </script>

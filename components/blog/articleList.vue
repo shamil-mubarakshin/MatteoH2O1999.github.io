@@ -1,6 +1,6 @@
 <template>
     <div class="list-wrapper">
-        {{articles}}
+        <BlogArticleListElement v-for="article in this.articles" :key="article.id" :article="article"/>
     </div>
 </template>
 
@@ -16,4 +16,9 @@ export default {
 </script>
 
 <style>
+.list-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 </style>
