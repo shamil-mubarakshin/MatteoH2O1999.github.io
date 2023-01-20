@@ -25,7 +25,7 @@ export default {
 
 <style>
 .social-icons {
-    background-color: black;
+    background-color: #060606;
 }
 
 .social-icons .social-icon {
