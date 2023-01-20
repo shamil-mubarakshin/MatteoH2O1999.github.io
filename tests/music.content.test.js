@@ -206,6 +206,10 @@ describe('Music credits', () => {
                     expect(parseInt(secondString)).toBeLessThan(60);
                     expect(letterZ).toBe('Z');
                 })
+
+                test('is equal to "createdAt"', () => {
+                    expect(releaseDate).toEqual(jsonData.createdAt);
+                })
             })
 
             test('has a "lang" attribute', () => {
