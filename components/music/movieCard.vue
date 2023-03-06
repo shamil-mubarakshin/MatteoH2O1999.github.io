@@ -34,7 +34,7 @@ export default {
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
         if (id === this.data.id) {
-            this.showInfo();
+            setTimeout(() => {this.showInfo()}, 250);
         }
     }
 }
