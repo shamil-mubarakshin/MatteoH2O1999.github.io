@@ -51,6 +51,8 @@ function getPaths(path) {
 }
 
 describe('Music credits', () => {
+    const ids = [];
+
     describe.each(creditFolders)('$tabName', ({tabName, folder}) => {
         const folderPath = './content/music/' + folder;
         const folderPaths = getPaths(folderPath);
@@ -386,6 +388,26 @@ describe('Music credits', () => {
                             })
                         })
                     })
+                })
+            })
+
+            test('has an "id" attribute', () => {
+                let id;
+                try {
+                    id = jsonData.id
+                } catch (error) {
+                    id = null;
+                }
+                expect(id).toBeTruthy();
+            })
+
+            describe('Id', () => {
+                test('is unique', () => {
+                    const id = jsonData.id;
+
+                    expect(ids).not.toContainEqual(id);
+
+                    ids.push(id);
                 })
             })
         })

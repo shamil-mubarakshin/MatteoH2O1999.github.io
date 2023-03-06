@@ -29,6 +29,13 @@ export default {
             this.$refs.infoWindow.classList.remove('show');
             document.body.style.overflow = 'auto';
         }
+    },
+    mounted() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+        if (id === this.data.id) {
+            this.showInfo();
+        }
     }
 }
 </script>
