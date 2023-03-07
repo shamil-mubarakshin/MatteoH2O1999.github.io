@@ -34,6 +34,10 @@ export default {
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
         if (id === this.data.id) {
+            const from = this.$nuxt.context.from?.fullPath;
+            if (from && from.includes('/music')) {
+                return
+            }
             setTimeout(() => {this.showInfo()}, 250);
         }
     }
