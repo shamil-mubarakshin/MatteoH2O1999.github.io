@@ -9,14 +9,16 @@
             <MusicLinkIcon v-for="platform in Object.keys(tracks[0].url)" :key="platform.id" class="playlist-link" :platform="platform" :url="tracks[0].url[platform]" />
         </h3>
         <table v-if="this.playlists.length > 0">
-            <tr v-for="track in this.tracks" :key="track.id">
-                <td>
-                    {{ track.name }}
-                </td>
-                <td>
-                    <MusicLinkIcon class="track-link" v-for="platform in Object.keys(track.url)" :key="platform.id" :platform="platform" :url="track.url[platform]"/>
-                </td>
-            </tr>
+            <tbody>
+                <tr v-for="track in this.tracks" :key="track.id">
+                    <td>
+                        {{ track.name }}
+                    </td>
+                    <td>
+                        <MusicLinkIcon class="track-link" v-for="platform in Object.keys(track.url)" :key="platform.id" :platform="platform" :url="track.url[platform]"/>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </template>
