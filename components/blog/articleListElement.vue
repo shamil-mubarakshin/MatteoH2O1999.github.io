@@ -84,4 +84,15 @@ export default {
 .article-text-wrapper {
     width: 50vw;
 }
+@media screen and (max-width: 640px) {
+    .article-wrapper {
+        max-width: 90vw;
+    }
+    .article-image-wrapper {
+        display: none;
+    }
+    .article-text-wrapper    {
+        width: 90vw;
+    }
+}
 </style>
