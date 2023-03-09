@@ -7,7 +7,7 @@ let navbar_en_us = {
 }
 
 let navbar_it_it = {
-    "home": "Pagina iniziale",
+    "home": "Pagina principale",
     "about": "Chi sono",
     "projects": "Progetti",
     "music": "Musica",
