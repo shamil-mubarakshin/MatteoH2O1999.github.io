@@ -29,7 +29,7 @@ export default {
             return dateB.getTime() - dateA.getTime();
         })
         if (articles.length > articleLimit) {
-            articles = articles.slice(0, articleLimit - 1);
+            articles = articles.slice(0, articleLimit);
         }
         return {
             articles
