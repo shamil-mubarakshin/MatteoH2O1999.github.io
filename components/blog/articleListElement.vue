@@ -1,8 +1,10 @@
 <template>
     <div class="article-wrapper">
-        <div class="article-image-wrapper">
-            <nuxt-img format="webp" sizes="xs:20vw sm:20vw md:20vw lg:20vw xl:20vw xxl:20vw" :src="this.data.img" class="article-image-card" />
-        </div>
+        <NuxtLink :to="localePath(this.data.url)">
+            <div class="article-image-wrapper">
+                <nuxt-img format="webp" sizes="xs:20vw sm:20vw md:20vw lg:20vw xl:20vw xxl:20vw" :src="this.data.img" class="article-image-card" />
+            </div>
+        </NuxtLink>
         <div class="article-text-wrapper">
             <NuxtLink :to="localePath(this.data.url)">
                 <h2>{{this.data.title}}</h2>
@@ -70,29 +72,40 @@ export default {
     align-items: center;
     max-width: 80vw;
 }
+
 .article-image-wrapper {
     overflow: hidden;
     height: 30vh;
     width: 20vw;
     background-color: #3d3949;
 }
+
 .article-image-card {
     object-fit: contain;
     width: 100%;
     height: 100%;
 }
+
 .article-text-wrapper {
     width: 50vw;
 }
+
 @media screen and (max-width: 640px) {
     .article-wrapper {
         max-width: 90vw;
     }
+
     .article-image-wrapper {
         display: none;
     }
+
     .article-text-wrapper    {
         width: 90vw;
     }
+}
+
+.article-wrapper a {
+    text-decoration: none;
+    color: inherit;
 }
 </style>
