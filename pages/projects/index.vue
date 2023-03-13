@@ -1,7 +1,7 @@
 <template>
     <div>
         <BlogArticleList :articles="this.articles" />
-        <BlogPageSelector :currentPage="this.currentPage" :lastPage="this.lastPage"/>
+        <BlogPageSelector :currentPage="this.currentPage" :lastPage="this.lastPage" basePath="projects" queryName="page"/>
     </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
         const pageNumber = urlParams.get('page');
         let page = 0
         if (pageNumber !== null) {
-            page = parseInt(pageNumber);
+            page = parseInt(pageNumber) - 1 || 0;
         }
         const articles = [];
         const content = await context.$content('articles', context.i18n.locale, {deep: true}).sortBy('createdAt', 'desc').skip(articlesPerPage * page).fetch();
@@ -34,6 +34,7 @@ export default {
         const currentPage = page + 1;
         const lastPage = Math.ceil((content.length - articlesPerPage) / articlesPerPage) + page + 1;
         return {articles, currentPage, lastPage};
-    }
+    },
+    watchQuery: ['page']
 }
 </script>
