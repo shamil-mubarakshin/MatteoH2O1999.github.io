@@ -23,3 +23,12 @@ export default {
     }
 }
 </script>
+
+<style>
+article {
+    max-width: 60vw;
+    margin: auto;
+    text-align: left;
+    min-width: min(90vw, 600px)
+}
+</style>
