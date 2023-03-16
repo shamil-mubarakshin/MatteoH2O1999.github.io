@@ -5,6 +5,8 @@
                 <a href="https://www.youtube.com/channel/UCwYnDSpaMPxS6kJpy8vQgNw" target="_blank">
                     <font-awesome-icon icon="fa-brands fa-youtube" class="social-icon youtube-social"></font-awesome-icon>
                 </a>
+            </li>
+            <li>
                 <a href="https://github.com/MatteoH2O1999" target="_blank">
                     <font-awesome-icon icon="fa-brands fa-github" class="social-icon github-social"></font-awesome-icon>
                 </a>
@@ -39,6 +41,10 @@ export default {
     justify-content: center;
     align-items: center;
     padding: 0;
+}
+
+.social-icons ul li {
+    margin: 0px 2px 0px;
 }
 
 .social-icons ul li a {
