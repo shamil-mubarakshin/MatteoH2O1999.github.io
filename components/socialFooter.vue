@@ -27,7 +27,7 @@ export default {
 
 <style>
 .social-icons {
-    background-color: #060606;
+    background-color: #212121;
 }
 
 .social-icons .social-icon {
@@ -44,7 +44,7 @@ export default {
 }
 
 .social-icons ul li {
-    margin: 0px 2px 0px;
+    margin: 0px 4px 0px;
 }
 
 .social-icons ul li a {
