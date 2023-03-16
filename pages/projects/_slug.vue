@@ -1,5 +1,5 @@
 <template>
-    <article>
+    <article class="blog-article">
         <h1>{{page.title}}</h1>
         <nuxt-content :document="page" />
     </article>
@@ -25,10 +25,10 @@ export default {
 </script>
 
 <style>
-article {
-    max-width: 60vw;
+.blog-article {
+    max-width: 50vw;
     margin: auto;
     text-align: left;
-    min-width: min(90vw, 600px)
+    min-width: min(85vw, 600px);
 }
 </style>
