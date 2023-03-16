@@ -49,4 +49,8 @@ export default {
 .playlist-link {
     display: inline;
 }
+
+.playlist-link, .track-link {
+    font-size: 20px;
+}
 </style>
