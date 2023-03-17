@@ -46,12 +46,13 @@ export default {
 
 <style>
 .additional-info-tab {
-    background-color: darkgrey;
+    background-color: var(--medium-blue);
     display: flex;
     flex-direction: column;
     max-height: 90vh;
     max-width: 90vw;
     width: 150vh;
+    box-shadow: 0px 0px 5px 5px var(--dark-blue-shadow);
 }
 
 .additional-info-tab h2 {

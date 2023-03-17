@@ -27,11 +27,12 @@ export default {
 
 <style>
 .social-icons {
-    background-color: #212121;
+    background-color: #000;
 }
 
 .social-icons .social-icon {
     font-size: 25px;
+    color: inherit;
 }
 
 .social-icons ul {
@@ -41,21 +42,28 @@ export default {
     justify-content: center;
     align-items: center;
     padding: 0;
+    color: var(--darker-white);
+    transition-duration: 0.25s;
+}
+
+.social-icons ul:hover {
+    color: var(--gray);
+    transition-duration: 0.25s;
 }
 
 .social-icons ul li {
     margin: 0px 4px 0px;
+    color: inherit;
 }
 
 .social-icons ul li a {
     text-decoration: none;
+    color: inherit;
+    transition-duration: 0.25s;
 }
 
-.youtube-social {
-    color: var(--youtube-color);
-}
-
-.github-social {
-    color: var(--github-color);
+.social-icons ul li a:hover {
+    color: var(--darker-white);
+    transition-duration: 0.25s;
 }
 </style>

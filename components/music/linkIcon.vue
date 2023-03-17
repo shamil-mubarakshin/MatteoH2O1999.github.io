@@ -18,6 +18,6 @@ export default {
 
 <style>
 .youtube-link {
-    color: var(--youtube-color);
+    color: var(--light-blue);
 }
 </style>

@@ -24,7 +24,7 @@
 body {
     font-family: Merriweather, Arial, Helvetica, sans-serif;
     color: white;
-    background-color: rgb(19, 26, 42);
+    background-color: var(--dark-blue);
     margin: 0;
 }
 
@@ -36,7 +36,13 @@ body {
 }
 
 :root {
-    --youtube-color: #b61e1e;
-    --github-color: #eeeeee;
+    --dark-blue: #141526;
+    --dark-blue-shadow: #080814;
+    --bold-blue: #6060ff;
+    --doc-blue: #095589;
+    --medium-blue: #202035;
+    --light-blue: #1cbfff;
+    --darker-white: #bbbbbb;
+    --gray: #505050;
 }
 </style>

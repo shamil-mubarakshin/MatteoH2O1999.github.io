@@ -80,7 +80,9 @@ export default {
 
 <style>
 .nav-bar {
-    background-color: gray;
+    background-color: var(--medium-blue);
+    padding: 10px;
+    box-shadow: 0px 0px 4px 4px var(--dark-blue-shadow);
 }
 
 .nav-bar ul {
@@ -121,12 +123,20 @@ export default {
 }
 
 .nav-bar ul li.active {
-    color: darkgray;
+    color: var(--light-blue);
 }
 
 .nav-bar ul li a {
     text-decoration: none;
     color: inherit;
+}
+
+.nav-bar ul li a:hover {
+    color: var(--bold-blue);
+}
+
+.nav-bar ul li.active a:hover {
+    color: var(--light-blue);
 }
 
 .nav-bar ul li.logo {
@@ -168,8 +178,12 @@ export default {
     cursor: pointer;
 }
 
+.nav-bar .localeSelector .dropdown-locale-content a:hover {
+    color: inherit;
+}
+
 .nav-bar .localeSelector .dropdown-locale-content a.active {
-    color: cornflowerblue;
+    color: var(--light-blue);
 }
 
 .nav-bar .localeSelector .dropdown-locale-content.show {
