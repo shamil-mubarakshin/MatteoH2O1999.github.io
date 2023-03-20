@@ -42,7 +42,7 @@ body {
     --doc-blue: #095589;
     --medium-blue: #202035;
     --light-blue: #1cbfff;
-    --darker-white: #bbbbbb;
+    --darker-white: #dddddd;
     --gray: #505050;
 }
 </style>
