@@ -52,7 +52,7 @@ export default {
     max-height: 90vh;
     max-width: 90vw;
     width: 150vh;
-    box-shadow: 0px 0px 5px 5px var(--dark-blue-shadow);
+    box-shadow: 0px 0px 7px 7px var(--dark-blue-shadow);
 }
 
 .additional-info-tab h2 {
