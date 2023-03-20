@@ -2,14 +2,14 @@
     <div class="page-selector-wrapper">
         <div v-if="hasPrevious()">
             <div v-if="this.currentPage - 1 !== 1">
-                <NuxtLink :to="`${this.basePath}?${this.queryName}=1`">
+                <NuxtLink :to="localePath(`${this.basePath}?${this.queryName}=1`)">
                     1
                 </NuxtLink>
                 <div v-if="this.currentPage - 2 !== 1">
                     ...
                 </div>
             </div>
-            <NuxtLink :to="`${this.basePath}?${this.queryName}=${this.currentPage - 1}`">
+            <NuxtLink :to="localePath(`${this.basePath}?${this.queryName}=${this.currentPage - 1}`)">
                 {{this.currentPage - 1}}
             </NuxtLink>
         </div>
@@ -17,14 +17,14 @@
             {{this.currentPage}}
         </div>
         <div v-if="hasNext()">
-            <NuxtLink :to="`${this.basePath}?${this.queryName}=${this.currentPage + 1}`">
+            <NuxtLink :to="localePath(`${this.basePath}?${this.queryName}=${this.currentPage + 1}`)">
                 {{this.currentPage + 1}}
             </NuxtLink>
             <div v-if="this.currentPage + 1 !== this.lastPage">
                 <div v-if="this.currentPage + 2 !== this.lastPage">
                     ...
                 </div>
-                <NuxtLink :to="`${this.basePath}?${this.queryName}=${this.lastPage}`">
+                <NuxtLink :to="localePath(`${this.basePath}?${this.queryName}=${this.lastPage}`)">
                     {{this.lastPage}}
                 </NuxtLink>
             </div>

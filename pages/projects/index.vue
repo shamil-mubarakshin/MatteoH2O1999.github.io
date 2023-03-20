@@ -1,7 +1,7 @@
 <template>
     <div>
         <BlogArticleList :articles="this.articles" />
-        <BlogPageSelector :currentPage="this.currentPage" :lastPage="this.lastPage" basePath="projects" queryName="page"/>
+        <BlogPageSelector :currentPage="this.currentPage" :lastPage="this.lastPage" basePath="/projects" queryName="page"/>
     </div>
 </template>
 
