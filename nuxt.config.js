@@ -59,7 +59,18 @@ export default {
 
   generate: {
     fallback: true,
-    subFolders: false
+    subFolders: false,
+    async routes() {
+        const paths = [];
+        const {$content} = require('@nuxt/content');
+        const files = await $content('articles', {deep: true}).fetch();
+        for (const file of files) {
+          const slug = file.path.replace('/articles', '');
+          const splitSlug = slug.split('/');
+          paths.push('/' + [splitSlug[1], 'projects', file.slug].join('/'));
+        }
+        return paths;
+    }
   },
 
   loading: '~/components/loader.vue',
