@@ -10,7 +10,10 @@ const articlesPerPage = 10;
 export default {
     data() {
         return {
-            name: "ProjectsPage"
+            name: "ProjectsPage",
+            currentPage: 0,
+            lastPage: 0,
+            articles: []
         }
     },
     head() {
@@ -18,7 +21,8 @@ export default {
             title: "[WIP] Matteo Dell'Acqua | Projects"
         }
     },
-    async asyncData(context) {
+    async fetch() {
+        const context = this.$nuxt.context;
         const urlParams = new URLSearchParams(context.route.query);
         const pageNumber = urlParams.get('page');
         let page = 0
@@ -33,8 +37,12 @@ export default {
         }
         const currentPage = page + 1;
         const lastPage = Math.ceil((content.length - articlesPerPage) / articlesPerPage) + page + 1;
-        return {articles, currentPage, lastPage};
+        this.currentPage = currentPage;
+        this.lastPage = lastPage;
+        this.articles = articles;
     },
-    watchQuery: ['page']
+    watch: {
+        '$route.query': '$fetch'
+    }
 }
 </script>
