@@ -11,8 +11,8 @@ export default {
     data() {
         return {
             name: "ProjectsPage",
-            currentPage: 0,
-            lastPage: 0,
+            currentPage: 1,
+            lastPage: 1,
             articles: []
         }
     },
