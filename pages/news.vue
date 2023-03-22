@@ -9,12 +9,12 @@ const articleLimit = 10;
 export default {
     data() {
         return {
-            name: "HomePage",
+            name: "NewsPage",
         }
     },
     head() {
         return {
-            title: "[WIP] Matteo Dell'Acqua | Home"
+            title: `[WIP] Matteo Dell'Acqua | ${this.$t('navbar.news')}`
         }
     },
     async asyncData(context) {

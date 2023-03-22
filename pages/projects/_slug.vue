@@ -12,6 +12,11 @@ export default {
             name: 'projectsArticle'
         }
     },
+    head() {
+        return {
+            title: `[WIP] Matteo Dell'Acqua | ${this.page.title}`
+        }
+    },
     async asyncData(context) {
         let page
         try {

@@ -18,7 +18,7 @@ export default {
     },
     head() {
         return {
-            title: "[WIP] Matteo Dell'Acqua | Music"
+            title: `[WIP] Matteo Dell'Acqua | ${this.$t('navbar.music')}`
         }
     }
 }

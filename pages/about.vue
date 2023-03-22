@@ -13,7 +13,7 @@ export default {
     },
     head() {
         return {
-            title: "[WIP] Matteo Dell'Acqua | About"
+            title: `[WIP] Matteo Dell'Acqua | ${this.$t('navbar.about')}`
         }
     },
     async asyncData(context) {
