@@ -21,6 +21,7 @@
     "core-js": "^3.29.1",
     "nuxt": "^2.16.3",
     "postcss": "^8.4.21",
+    "prism-themes": "^1.9.0",
     "vue": "^2.7.14",
     "vue-server-renderer": "^2.7.14",
     "vue-template-compiler": "^2.7.14",
