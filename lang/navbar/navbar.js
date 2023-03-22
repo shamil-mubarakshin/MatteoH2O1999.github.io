@@ -1,5 +1,5 @@
 let navbar_en_us = {
-    "home": "Home",
+    "news": "News",
     "about": "About",
     "projects": "Projects",
     "music": "Music",
@@ -7,7 +7,7 @@ let navbar_en_us = {
 }
 
 let navbar_it_it = {
-    "home": "Pagina principale",
+    "news": "Novità",
     "about": "Chi sono",
     "projects": "Progetti",
     "music": "Musica",

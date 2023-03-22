@@ -8,8 +8,8 @@
                     </NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink :to="localePath('/home')" id="homeRef">
-                        {{ $t('navbar.home') }}
+                    <NuxtLink :to="localePath('/news')" id="homeRef">
+                        {{ $t('navbar.news') }}
                     </NuxtLink>
                 </li>
                 <li>
