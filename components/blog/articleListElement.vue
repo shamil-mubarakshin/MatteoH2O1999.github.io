@@ -1,5 +1,5 @@
 <template>
-    <div class="article-wrapper">
+    <div :class="{'music-article': this.article.dir.startsWith('/music'), 'article-wrapper': true}">
         <NuxtLink :to="localePath(this.data.url)">
             <div class="article-image-wrapper">
                 <nuxt-img format="webp" sizes="xs:20vw sm:20vw md:20vw lg:20vw xl:20vw xxl:20vw" :src="this.data.img" class="article-image-card" />
@@ -77,17 +77,34 @@ export default {
     overflow: hidden;
     height: 30vh;
     width: 20vw;
-    background-color: #3d3949;
+    margin-right: 50px;
 }
 
 .article-image-card {
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
     height: 100%;
 }
 
+.music-article .article-image-card {
+    object-fit: contain;
+}
+
 .article-text-wrapper {
     width: 50vw;
+}
+
+.article-text-wrapper a {
+    transition-duration: 0.25s;
+}
+
+.article-text-wrapper a:hover {
+    color: var(--bold-blue);
+    transition-duration: 0.25s;
+}
+
+.article-wrapper h2 {
+    font-size: 30px;
 }
 
 @media screen and (max-width: 640px) {
@@ -101,6 +118,10 @@ export default {
 
     .article-text-wrapper    {
         width: 90vw;
+    }
+
+    .article-wrapper h2 {
+        font-size: 24px;
     }
 }
 
