@@ -59,6 +59,7 @@ export default {
 <style>
 .page-selector-wrapper {
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .page-selector-wrapper div {
