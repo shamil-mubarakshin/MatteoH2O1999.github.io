@@ -69,8 +69,9 @@ export default {
 .article-wrapper {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     max-width: 80vw;
+    padding: 20px;
 }
 
 .article-image-wrapper {
