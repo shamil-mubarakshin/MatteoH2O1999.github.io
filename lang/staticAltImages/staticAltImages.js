@@ -1,9 +1,11 @@
 let staticAlt_en_us = {
-    homePagePhoto: "A photo of Matteo Dell'Acqua"
+    homePagePhoto: "A photo of Matteo Dell'Acqua",
+    navBarLogo: "Matteo Dell'Acqua's logo"
 }
 
 let staticAlt_it_it = {
-    homePagePhoto: "Una foto di Matteo Dell'Acqua"
+    homePagePhoto: "Una foto di Matteo Dell'Acqua",
+    navBarLogo: "Logo di Matteo Dell'Acqua"
 }
 
 export {

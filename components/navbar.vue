@@ -4,7 +4,7 @@
             <ul>
                 <li class="logo">
                     <NuxtLink :to="localePath('/')" id="indexRef">
-                        <nuxt-img format="webp" src="/navbar/logo.png" class="navbar-logo"/>
+                        <nuxt-img format="webp" src="/navbar/logo.png" class="navbar-logo" :alt="$t('altText.navBarLogo')"/>
                     </NuxtLink>
                 </li>
                 <li>
