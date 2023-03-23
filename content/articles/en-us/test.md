@@ -1,6 +1,6 @@
 ---
 title: Test
-previewImg: /navbar/logo.png
+previewImg: /music/cards/movies/spongebob_movie_rehydrated.jpg
 ---
 test article
 <!--more-->
