@@ -40,6 +40,9 @@ export default {
             }
             setTimeout(() => {this.showInfo()}, 250);
         }
+    },
+    beforeDestroy() {
+        this.hideInfo();
     }
 }
 </script>
