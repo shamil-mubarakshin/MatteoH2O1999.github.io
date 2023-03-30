@@ -3,7 +3,8 @@ let navbar_en_us = {
     "about": "About",
     "projects": "Projects",
     "music": "Music",
-    "language": "Change language"
+    "language": "Change language",
+    "copyright": "© 2020-2023 Matteo Dell'Acqua. All rights reserved"
 }
 
 let navbar_it_it = {
@@ -11,7 +12,8 @@ let navbar_it_it = {
     "about": "Chi sono",
     "projects": "Progetti",
     "music": "Musica",
-    "language": "Cambia lingua"
+    "language": "Cambia lingua",
+    "copyright": "© 2020-2023 Matteo Dell'Acqua. Tutti i diritti riservati"
 }
 
 export {

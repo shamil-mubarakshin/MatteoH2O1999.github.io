@@ -12,6 +12,9 @@
                 </a>
             </li>
         </ul>
+        <div class="copyright-notice">
+            {{ $t('navbar.copyright') }}
+        </div>
     </div>
 </template>
 
@@ -28,6 +31,13 @@ export default {
 <style>
 .social-icons {
     background-color: #000;
+}
+
+.copyright-notice {
+    color: var(--darker-white);
+    text-align: center;
+    margin: 0px 10px 20px;
+    font-size: 12px;
 }
 
 .social-icons .social-icon {
