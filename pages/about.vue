@@ -1,5 +1,5 @@
 <template>
-    <article>
+    <article class="about-article">
         <nuxt-content :document="page" />
     </article>
 </template>
@@ -25,3 +25,11 @@ export default {
     }
 }
 </script>
+
+<style>
+.about-article {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
