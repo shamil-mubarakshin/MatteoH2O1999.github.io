@@ -45,4 +45,14 @@ body {
     --darker-white: #dddddd;
     --gray: #505050;
 }
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.25s;
+}
+
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
 </style>

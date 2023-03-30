@@ -1,6 +1,6 @@
 <template>
     <div v-if="loading" class="loading-page">
-        <div class="shadow show">
+        <div class="loader-div">
         </div>
     </div>
 </template>
@@ -26,3 +26,13 @@ export default {
     },
 }
 </script>
+<style>
+.loader-div {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    cursor: wait;
+}
+</style>
