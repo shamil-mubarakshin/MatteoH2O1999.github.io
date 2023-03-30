@@ -39,5 +39,6 @@ export default {
     margin: auto;
     text-align: left;
     min-width: min(85vw, 600px);
+    width: 100%;
 }
 </style>
