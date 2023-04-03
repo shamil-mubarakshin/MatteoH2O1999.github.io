@@ -28,16 +28,16 @@
                     </NuxtLink>
                 </li>
                 <li class="localeSelector">
-                    <a class="dropdown-locale" id="language-selector" @click="showLocaleSelector();">
+                    <button class="dropdown-locale" id="language-selector" @click="showLocaleSelector();" aria-haspopup="true">
                         {{ $t('navbar.language') }}
-                    </a>
+                    </button>
                     <div class="dropdown-locale-content" id="language-menu">
-                        <a @click.prevent.stop="setLocale('en-us')" id="en-us">
+                        <button @click.prevent.stop="setLocale('en-us')" id="en-us">
                             English
-                        </a>
-                        <a @click.prevent.stop="setLocale('it-it')" id="it-it">
+                        </button>
+                        <button @click.prevent.stop="setLocale('it-it')" id="it-it">
                             Italiano
-                        </a>
+                        </button>
                     </div>
                     <div class="shadow" @click="showLocaleSelector();" id="shadow-menu"></div>
                 </li>
@@ -126,16 +126,16 @@ export default {
     color: var(--light-blue);
 }
 
-.nav-bar ul li a {
+.nav-bar ul li a, .nav-bar ul li button {
     text-decoration: none;
     color: inherit;
 }
 
-.nav-bar ul li a:hover {
+.nav-bar ul li a:hover, .nav-bar ul li button:hover {
     color: var(--bold-blue);
 }
 
-.nav-bar ul li.active a:hover {
+.nav-bar ul li.active a:hover, .nav-bar ul li.active button:hover {
     color: var(--light-blue);
 }
 
@@ -173,16 +173,19 @@ export default {
     z-index: 2;
 }
 
-.nav-bar .localeSelector .dropdown-locale-content a {
+.nav-bar .localeSelector .dropdown-locale-content button {
     display: block;
     cursor: pointer;
+    background-color: inherit;
+    font: inherit;
+    border: none;
 }
 
-.nav-bar .localeSelector .dropdown-locale-content a:hover {
+.nav-bar .localeSelector .dropdown-locale-content button:hover {
     color: inherit;
 }
 
-.nav-bar .localeSelector .dropdown-locale-content a.active {
+.nav-bar .localeSelector .dropdown-locale-content button.active {
     color: var(--light-blue);
 }
 

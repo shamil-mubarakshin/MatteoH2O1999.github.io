@@ -6,7 +6,7 @@ export function updateActivePage() {
         var li = ul[index];
         li.classList.remove("active");
         var a = li.getElementsByTagName("a")[0];
-        if (a.pathname.length > 0 && (currentPage.includes(a.pathname))) {
+        if (a && a.pathname.length > 0 && (currentPage.includes(a.pathname))) {
             li.classList.add("active");
             preventRedirect(a.id);
         }

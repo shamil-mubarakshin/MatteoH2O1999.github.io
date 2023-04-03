@@ -5,7 +5,7 @@ export function showLocaleSelector() {
 
 export function showActiveLocale(localeCode) {
     let ul = document.getElementById("language-menu");
-    let locales = ul.getElementsByTagName("a");
+    let locales = ul.getElementsByTagName("button");
     for (let index = 0; index < locales.length; index++) {
         const locale = locales[index];
         locale.classList.remove("active");
