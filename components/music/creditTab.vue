@@ -25,6 +25,15 @@ export default {
 </script>
 
 <style>
+.credits-tab {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.credits-tab h1 {
+    margin: 20px 30px 20px;
+}
+
 .cards-tab {
     display: grid;
     justify-content: center;
