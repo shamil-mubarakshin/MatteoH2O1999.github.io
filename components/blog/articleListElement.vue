@@ -130,4 +130,8 @@ export default {
     text-decoration: none;
     color: inherit;
 }
+
+.article-date {
+    font-style: italic;
+}
 </style>
