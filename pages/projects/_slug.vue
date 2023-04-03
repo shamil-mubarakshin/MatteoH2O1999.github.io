@@ -1,6 +1,7 @@
 <template>
     <article class="blog-article">
         <h1>{{page.title}}</h1>
+        <div class="blog-article-date">{{date}}</div>
         <nuxt-content :document="page" />
     </article>
 </template>
@@ -28,7 +29,9 @@ export default {
             context.error({statusCode: 404, message: 'Invalid article resource'});
         }
         page = page.at(0);
-        return {page};
+        let date = new Date(page.createdAt);
+        date = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+        return {page, date};
     }
 }
 </script>
@@ -40,5 +43,9 @@ export default {
     text-align: left;
     min-width: min(85vw, 600px);
     width: 100%;
+}
+
+.blog-article-date {
+    font-style: italic;
 }
 </style>
