@@ -129,10 +129,12 @@ export default {
 .nav-bar ul li a, .nav-bar ul li button {
     text-decoration: none;
     color: inherit;
+    transition-duration: 0.25s;
 }
 
 .nav-bar ul li a:hover, .nav-bar ul li button:hover {
     color: var(--bold-blue);
+    transition-duration: 0.25s;
 }
 
 .nav-bar ul li.active a:hover, .nav-bar ul li.active button:hover {
@@ -165,12 +167,15 @@ export default {
     font-style: inherit;
     font-weight: inherit;
     cursor: pointer;
+    padding: 0px;
 }
 
 .nav-bar .localeSelector .dropdown-locale-content {
     display: none;
     position: absolute;
+    background-color: var(--dark-blue);
     z-index: 2;
+    padding: 20px;
 }
 
 .nav-bar .localeSelector .dropdown-locale-content button {
@@ -179,10 +184,13 @@ export default {
     background-color: inherit;
     font: inherit;
     border: none;
+    padding: 3px;
+    transition-duration: 0.25s;
 }
 
 .nav-bar .localeSelector .dropdown-locale-content button:hover {
-    color: inherit;
+    color: var(--bold-blue);
+    transition-duration: 0.25s;
 }
 
 .nav-bar .localeSelector .dropdown-locale-content button.active {
