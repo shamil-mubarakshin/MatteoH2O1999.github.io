@@ -176,6 +176,7 @@ export default {
     background-color: var(--dark-blue);
     z-index: 2;
     padding: 20px;
+    border-radius: 10px;
 }
 
 .nav-bar .localeSelector .dropdown-locale-content button {

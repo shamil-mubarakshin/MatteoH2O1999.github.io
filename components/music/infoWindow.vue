@@ -53,16 +53,19 @@ export default {
     max-width: 90vw;
     width: 150vh;
     box-shadow: 0px 0px 7px 7px var(--dark-blue-shadow);
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .additional-info-tab h2 {
-    margin: 5px;
+    margin: 10px;
 }
 
 .info-window-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
 .info-window-content {
@@ -70,12 +73,14 @@ export default {
     flex-direction: row;
     align-items: stretch;
     overflow: auto;
+    margin: 20px;
 }
 
 .info-window-image {
     display: block;
     width: 100%;
     aspect-ratio: 2 / 3;
+    border-radius: 5px;
 }
 
 .info-window-image-div {
@@ -85,6 +90,7 @@ export default {
 }
 
 .info-window-text {
+    padding: 10px 10px 10px;
     overflow: auto;
     flex-grow: 0;
 }
@@ -94,6 +100,7 @@ export default {
         flex-direction: column;
         align-items: center;
         overflow: auto;
+        margin: 10px;
     }
 
     .info-window-image-div {
@@ -103,6 +110,7 @@ export default {
 
     .info-window-text {
         overflow: unset;
+        padding: 10px 0px 10px;
     }
 }
 </style>
