@@ -11,6 +11,9 @@
         <table v-if="this.playlists.length > 0" role="presentation">
             <tbody>
                 <tr v-for="track in this.tracks" :key="track.id">
+                    <td v-if="useExplicitTrackNumbers">
+                        {{ track.order }}
+                    </td>
                     <td>
                         {{ track.name }}
                     </td>
