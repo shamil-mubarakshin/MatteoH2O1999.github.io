@@ -47,7 +47,7 @@ export default {
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .cards-tab {
-        grid-template-columns: repeat(auto-fill, 20vw);
+        grid-template-columns: repeat(auto-fill, 19vw);
     }
 }
 
