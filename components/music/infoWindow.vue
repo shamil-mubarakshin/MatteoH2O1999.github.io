@@ -111,7 +111,7 @@ export default {
 
     .info-window-text {
         overflow: unset;
-        padding: 10px 0px 10px;
+        padding: 20px 0px 10px;
     }
 }
 </style>
