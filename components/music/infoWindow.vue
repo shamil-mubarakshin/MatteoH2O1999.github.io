@@ -12,6 +12,7 @@
                 <div>
                     {{ description }}
                 </div>
+                <hr>
                 <div>
                     <MusicLinks :data="this.data" />
                 </div>
