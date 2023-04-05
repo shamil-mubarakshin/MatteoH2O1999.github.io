@@ -8,7 +8,7 @@
             {{ $t('musicCreditsTabs.listen') }}
             <MusicLinkIcon v-for="platform in Object.keys(tracks[0].url)" :key="platform.id" class="playlist-link" :platform="platform" :url="tracks[0].url[platform]" />
         </h3>
-        <table v-if="this.playlists.length > 0">
+        <table v-if="this.playlists.length > 0" role="presentation">
             <tbody>
                 <tr v-for="track in this.tracks" :key="track.id">
                     <td>
