@@ -53,7 +53,7 @@ export default {
     max-height: 90vh;
     max-width: 90vw;
     width: 150vh;
-    box-shadow: 0px 0px 7px 7px var(--dark-blue-shadow);
+    box-shadow: 0px 0px 7px 7px var(--black-blue-shadow);
     border-radius: 10px;
     padding: 5px;
 }

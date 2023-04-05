@@ -44,6 +44,7 @@ body {
     --light-blue: #1cbfff;
     --darker-white: #dddddd;
     --gray: #505050;
+    --black-blue-shadow: #050508;
 }
 
 .page-enter-active,
