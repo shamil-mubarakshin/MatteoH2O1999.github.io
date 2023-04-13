@@ -122,7 +122,7 @@ export default {
     padding: 6px 6px;
 }
 
-.nav-bar ul li.active {
+.nav-bar ul li.active, .nav-bar ul li button.active {
     color: var(--light-blue);
 }
 
@@ -134,10 +134,9 @@ export default {
 
 .nav-bar ul li a:hover, .nav-bar ul li button:hover {
     color: var(--bold-blue);
-    transition-duration: 0.25s;
 }
 
-.nav-bar ul li.active a:hover, .nav-bar ul li.active button:hover {
+.nav-bar ul li.active a:hover, .nav-bar ul li button.active:hover {
     color: var(--light-blue);
 }
 
@@ -186,16 +185,6 @@ export default {
     font: inherit;
     border: none;
     padding: 3px;
-    transition-duration: 0.25s;
-}
-
-.nav-bar .localeSelector .dropdown-locale-content button:hover {
-    color: var(--bold-blue);
-    transition-duration: 0.25s;
-}
-
-.nav-bar .localeSelector .dropdown-locale-content button.active {
-    color: var(--light-blue);
 }
 
 .nav-bar .localeSelector .dropdown-locale-content.show {
