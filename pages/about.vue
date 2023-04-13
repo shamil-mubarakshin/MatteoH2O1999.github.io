@@ -1,6 +1,6 @@
 <template>
     <article class="about-article">
-        <nuxt-content :document="page" />
+        <nuxt-content :document="aboutParagraph" />
     </article>
 </template>
 
@@ -18,9 +18,9 @@ export default {
     },
     async asyncData(context) {
         const locale = context.i18n.locale;
-        const page = await context.$content("about", locale).fetch();
+        const aboutParagraph = await context.$content("about", locale).fetch();
         return {
-            page
+            aboutParagraph
         };
     }
 }
