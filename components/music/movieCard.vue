@@ -57,7 +57,6 @@ export default {
 
 .card-poster:hover {
     transform: scale(1.05, 1.05);
-    transition: transform 0.1s ease;
 }
 
 .additional-info {
