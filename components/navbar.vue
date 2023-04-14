@@ -83,6 +83,7 @@ export default {
     background-color: var(--medium-blue);
     padding: 10px;
     box-shadow: 0px 0px 4px 4px var(--dark-blue-shadow);
+    font-size: 18px;
 }
 
 .nav-bar ul {
