@@ -8,34 +8,34 @@
                     </NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink :to="localePath('/news')" id="homeRef">
+                    <NuxtLink :to="localePath('/news')" id="homeRef" class="navbar-hover-effect">
                         {{ $t('navbar.news') }}
                     </NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink :to="localePath('/about')" id="aboutRef">
+                    <NuxtLink :to="localePath('/about')" id="aboutRef" class="navbar-hover-effect">
                         {{ $t('navbar.about') }}
                     </NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink :to="localePath('/projects')" id="projectsRef">
+                    <NuxtLink :to="localePath('/projects')" id="projectsRef" class="navbar-hover-effect">
                         {{ $t('navbar.projects') }}
                     </NuxtLink>
                 </li>
                 <li>
-                    <NuxtLink :to="localePath('/music')" id="musicRef">
+                    <NuxtLink :to="localePath('/music')" id="musicRef" class="navbar-hover-effect">
                         {{ $t('navbar.music') }}
                     </NuxtLink>
                 </li>
                 <li class="localeSelector">
-                    <button class="dropdown-locale" id="language-selector" @click="showLocaleSelector();" aria-haspopup="true">
+                    <button class="dropdown-locale navbar-hover-effect" id="language-selector" @click="showLocaleSelector();" aria-haspopup="true">
                         {{ $t('navbar.language') }}
                     </button>
                     <div class="dropdown-locale-content" id="language-menu">
-                        <button @click.prevent.stop="setLocale('en-us')" id="en-us">
+                        <button @click.prevent.stop="setLocale('en-us')" id="en-us" class="navbar-hover-effect">
                             English
                         </button>
-                        <button @click.prevent.stop="setLocale('it-it')" id="it-it">
+                        <button @click.prevent.stop="setLocale('it-it')" id="it-it" class="navbar-hover-effect">
                             Italiano
                         </button>
                     </div>
@@ -95,6 +95,11 @@ export default {
     height: 50px;
 }
 
+.nav-bar li a.navbar-hover-effect, .dropdown-locale {
+    padding: 10px;
+    display: block;
+}
+
 @media screen and (max-width:600px) {
     .nav-bar ul {
         flex-direction: column;
@@ -115,28 +120,28 @@ export default {
         width: 100%;
         max-width: 200px;
     }
+
+    .nav-bar li a.navbar-hover-effect, .dropdown-locale {
+        padding: 3px;
+    }
 }
 
-.nav-bar ul li {
-    display: inline-block;
-    padding: 6px 6px;
+.nav-bar li {
+    display: block;
+    padding: 6px;
 }
 
-.nav-bar ul li.active, .nav-bar ul li button.active {
-    color: var(--light-blue);
-}
-
-.nav-bar ul li a, .nav-bar ul li button {
+.navbar-hover-effect {
     text-decoration: none;
     color: inherit;
     transition-duration: 0.25s;
 }
 
-.nav-bar ul li a:hover, .nav-bar ul li button:hover {
+.navbar-hover-effect:hover {
     color: var(--bold-blue);
 }
 
-.nav-bar ul li.active a:hover, .nav-bar ul li button.active:hover {
+li.active .navbar-hover-effect, .navbar-hover-effect.active {
     color: var(--light-blue);
 }
 
@@ -166,7 +171,6 @@ export default {
     font-style: inherit;
     font-weight: inherit;
     cursor: pointer;
-    padding: 0px;
 }
 
 .nav-bar .localeSelector .dropdown-locale-content {
@@ -184,7 +188,7 @@ export default {
     background-color: inherit;
     font: inherit;
     border: none;
-    padding: 3px;
+    padding: 6px;
 }
 
 .nav-bar .localeSelector .dropdown-locale-content.show {
