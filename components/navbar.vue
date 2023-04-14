@@ -177,10 +177,11 @@ li.active .navbar-hover-effect, .navbar-hover-effect.active {
 .nav-bar .localeSelector .dropdown-locale-content {
     display: none;
     position: absolute;
-    background-color: var(--dark-blue);
+    background-color: var(--medium-blue);
     z-index: 2;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0px 10px 50px var(--black-blue-shadow);
 }
 
 .nav-bar .localeSelector .dropdown-locale-content button {
