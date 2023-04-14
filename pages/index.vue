@@ -1,6 +1,6 @@
 <template>
     <div class="main-page-photo">
-        <nuxt-img format="webp" sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw xxl:100vw" src="/homePage/homePagePhoto.png" :alt="$t('altText.homePagePhoto')" style="width: 90%;" class="main-page-central-photo" id="main-page-central-photo" @load="enterMainPage();"/>
+        <nuxt-img format="webp" sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw xxl:100vw" src="/homePage/homePagePhoto.png" :alt="$t('altText.homePagePhoto')" class="main-page-central-photo" id="main-page-central-photo" @load="enterMainPage();"/>
         <h1 class="main-page-name" id="main-page-central-name">
             MATTEO DELL'ACQUA
         </h1>
@@ -49,6 +49,8 @@ export default {
 .main-page-central-photo {
   transform: translateX(-3vw);
   opacity: 0;
+  width: 90vw;
+  aspect-ratio: auto 16 / 9;
 }
 
 @keyframes mainImageEntrance {
