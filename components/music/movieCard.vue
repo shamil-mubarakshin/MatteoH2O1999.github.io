@@ -1,6 +1,6 @@
 <template>
     <div>
-        <nuxt-img format="webp" sizes="xs:40vw sm:40vw md:19vw lg:15vw xl:15vw xxl:15vw" :src="this.data.imgPath" class="card-poster" @click="showInfo();" />
+        <nuxt-img format="webp" sizes="xs:40vw sm:40vw md:19vw lg:15vw xl:15vw xxl:15vw" :src="this.data.imgPath" class="card-poster" @click="showInfo();" tabindex="0" role="button" @keydown="keydown($event);" aria-haspopup="dialog" :alt="this.altCard"/>
         <div class="additional-info">
             <div class="additional-info-shadow" ref="shadow" @click="hideInfo();"></div>
             <div class="additional-info-window" ref="infoWindow">
@@ -28,6 +28,12 @@ export default {
             this.$refs.shadow.classList.remove('show');
             this.$refs.infoWindow.classList.remove('show');
             document.body.style.overflow = 'auto';
+        },
+        keydown(event) {
+            const keyCode = event.keyCode;
+            if (keyCode === 13 || keyCode === 32) {
+                this.showInfo();
+            }
         }
     },
     mounted() {
@@ -43,6 +49,11 @@ export default {
     },
     beforeDestroy() {
         this.hideInfo();
+    },
+    computed: {
+        altCard() {
+            return this.data.lang[this.$i18n.locale].title;
+        },
     }
 }
 </script>
@@ -55,7 +66,7 @@ export default {
     cursor: pointer;
 }
 
-.card-poster:hover {
+.card-poster:hover, .card-poster:focus {
     transform: scale(1.05, 1.05);
 }
 

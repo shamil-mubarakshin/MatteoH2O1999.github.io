@@ -138,7 +138,7 @@ export default {
     transition-duration: 0.25s;
 }
 
-.navbar-hover-effect:hover {
+.navbar-hover-effect:hover, .navbar-hover-effect:focus {
     color: var(--bold-blue);
 }
 

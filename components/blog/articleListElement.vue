@@ -2,7 +2,7 @@
     <div :class="{'music-article': this.article.dir.startsWith('/music'), 'article-wrapper': true}">
         <NuxtLink :to="localePath(this.data.url)">
             <div class="article-image-wrapper">
-                <nuxt-img format="webp" sizes="xs:20vw sm:20vw md:20vw lg:20vw xl:20vw xxl:20vw" :src="this.data.img" class="article-image-card" />
+                <nuxt-img format="webp" sizes="xs:20vw sm:20vw md:20vw lg:20vw xl:20vw xxl:20vw" :src="this.data.img" class="article-image-card" :alt="this.imgAlt" />
             </div>
         </NuxtLink>
         <div class="article-text-wrapper">
@@ -60,6 +60,9 @@ export default {
         articleDate() {
             const date = new Date(this.article.createdAt);
             return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+        },
+        imgAlt() {
+            return this.$t('altText.articleImgAlt').concat(' ', this.data.title);
         }
     }
 }
@@ -85,6 +88,7 @@ export default {
     object-fit: cover;
     width: 100%;
     height: 100%;
+    aspect-ratio: auto 1 / 1;
 }
 
 .music-article .article-image-card {
@@ -99,7 +103,7 @@ export default {
     transition-duration: 0.25s;
 }
 
-.article-text-wrapper a:hover {
+.article-text-wrapper a:hover, .article-text-wrapper a:focus {
     color: var(--bold-blue);
     transition-duration: 0.25s;
 }
