@@ -1,6 +1,7 @@
 ---
 title: Test
 previewImg: /music/cards/movies/spongebob_movie_rehydrated.jpg
+createdAt: "2023-03-20T00:00:00Z"
 ---
 articolo test
 <!--more-->

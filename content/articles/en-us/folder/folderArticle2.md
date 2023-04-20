@@ -1,6 +1,7 @@
 ---
 title: Test folder 2
 previewImg: /navbar/logo.png
+createdAt: "2023-04-12T00:00:00Z"
 ---
 articolo test folder 2
 <!--more-->
