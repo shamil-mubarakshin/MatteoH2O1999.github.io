@@ -20,7 +20,7 @@ function getLocales() {
     let localeList = [];
     localeObject.forEach(element => {
         localeList.push(element.code);
-    })
+    });
     return localeList;
 }
 
@@ -41,7 +41,7 @@ function getPaths(path) {
             const currentPath = paths.pop();
             returnPaths.push(currentPath);
             if (fs.lstatSync(currentPath).isDirectory()) {
-                paths.push(...getRelativePaths(currentPath))
+                paths.push(...getRelativePaths(currentPath));
             }
         }
         return returnPaths;
@@ -59,7 +59,7 @@ describe('Music credits', () => {
 
         test('has a "'+ folder +'" folder', () => {
             expect(fs.lstatSync(folderPath).isDirectory()).toBe(true);
-        })
+        });
 
         describe.each(folderPaths)(tabName + ' credit file %s', (path) => {
             let mediaData;
@@ -78,18 +78,18 @@ describe('Music credits', () => {
                 } catch (error) {
                     mediaData = null;
                 }
-            })
+            });
 
             test('is a file', () => {
                 expect(fs.lstatSync(path).isFile()).toBe(true);
-            })
+            });
 
             test('is a markdown file', async () => {
                 expect(mediaData).toHaveProperty('file_extension');
                 const file_extension = mediaData.file_extension;
                 expect(file_extension).toHaveLength(1);
                 expect(file_extension[0]).toBe('md');
-            })
+            });
 
             test('has an "imgPath" attribute', () => {
                 let img;
@@ -99,7 +99,7 @@ describe('Music credits', () => {
                     img = null;
                 }
                 expect(img).toBeTruthy();
-            })
+            });
 
             describe('Poster image (specified via "imgPath")', () => {
                 let imgPath;
@@ -119,19 +119,19 @@ describe('Music credits', () => {
                             imgData = null;
                         }
                     }
-                })
+                });
 
                 test('is a valid file', () => {
                     expect(fs.lstatSync(imgPath).isFile()).toBe(true);
-                })
+                });
 
                 test('is an image', () => {
                     expect(imgData).toHaveProperty('internet_media_type');
                     const mediaTypes = imgData.internet_media_type;
                     mediaTypes.forEach(mediaType => {
                         expect(mediaType).toContain('image/');
-                    })
-                })
+                    });
+                });
 
                 test('has the correct aspect ratio (close to 2:3)', () => {
                     const imageDimensions = getImageSize(imgPath);
@@ -139,7 +139,7 @@ describe('Music credits', () => {
                     const height = imageDimensions.height;
                     const ratio = width / height;
                     expect(ratio).toBeCloseTo(desiredPosterRatio, 1);
-                })
+                });
             })
 
             test('has a "releaseDate" attribute', () => {
@@ -150,7 +150,7 @@ describe('Music credits', () => {
                     date = null;
                 }
                 expect(date).toBeTruthy();
-            })
+            });
 
             describe('Release date (specified via "releaseDate")', () => {
                 let releaseDate;
@@ -161,7 +161,7 @@ describe('Music credits', () => {
                     } catch (error) {
                         releaseDate = null;
                     }
-                })
+                });
 
                 test('is a valid date string', () => {
                     const date = new Date(releaseDate);
@@ -173,7 +173,7 @@ describe('Music credits', () => {
                         isoString = null;
                     }
                     expect(isoString).toBeTruthy();
-                })
+                });
 
                 test('is a UTC date string', () => {
                     const yearString = releaseDate.slice(0, 4);
@@ -207,11 +207,11 @@ describe('Music credits', () => {
                     expect(parseInt(secondString)).toBeGreaterThanOrEqual(0);
                     expect(parseInt(secondString)).toBeLessThan(60);
                     expect(letterZ).toBe('Z');
-                })
+                });
 
                 test('is equal to "createdAt"', () => {
                     expect(releaseDate).toEqual(jsonData.createdAt);
-                })
+                });
             })
 
             test('has a "lang" attribute', () => {
@@ -222,7 +222,7 @@ describe('Music credits', () => {
                     lang = null;
                 }
                 expect(lang).toBeTruthy();
-            })
+            });
 
             describe('Localization (specified via "lang")', () => {
                 let lang;
@@ -233,7 +233,7 @@ describe('Music credits', () => {
                     } catch (error) {
                         lang = null;
                     }
-                })
+                });
 
                 describe.each(locales)('%s', (localeCode) => {
                     let locale;
@@ -244,21 +244,21 @@ describe('Music credits', () => {
                         } catch (error) {
                             locale = null;
                         }
-                    })
+                    });
 
                     test('is defined', () => {
                         expect(locale).toBeTruthy();
-                    })
+                    });
 
                     test('has a valid "title" attribute', () => {
                         expect(locale.title).toBeTruthy();
-                    })
+                    });
 
                     test('has a valid "description" attribute', () => {
                         expect(locale.description).toBeTruthy();
-                    })
-                })
-            })
+                    });
+                });
+            });
 
             test('has a "links" attribute', () => {
                 let links;
@@ -268,7 +268,7 @@ describe('Music credits', () => {
                     links = null;
                 }
                 expect(links).toBeTruthy();
-            })
+            });
 
             describe('Tracks and playlist links (specified via "links")', () => {
                 let links;
@@ -279,7 +279,7 @@ describe('Music credits', () => {
                     } catch (error) {
                         links = null;
                     }
-                })
+                });
 
                 test('has a boolean "track-order" attribute', () => {
                     let order;
@@ -290,7 +290,7 @@ describe('Music credits', () => {
                     }
                     expect(order).toBeDefined();
                     expect(typeof order).toBe('boolean');
-                })
+                });
 
                 test('has a "playlists" array', () => {
                     let playlists;
@@ -301,7 +301,7 @@ describe('Music credits', () => {
                     }
                     expect(playlists).toBeDefined();
                     expect(playlists).toBeInstanceOf(Array);
-                })
+                });
 
                 describe('Playlists', () => {
                     let playlists;
@@ -312,13 +312,13 @@ describe('Music credits', () => {
                         } catch (error) {
                             playlists = null;
                         }
-                    })
+                    });
 
                     test('no playlists mean a single track', () => {
                         if (playlists.length === 0) {
                             expect(links.tracks.length).toBe(1);
                         }
-                    })
+                    });
 
                     test('each playlist has a valid platform and url', () => {
                         playlists.forEach((playlist) => {
@@ -326,9 +326,9 @@ describe('Music credits', () => {
                             expect(musicPlatforms).toHaveProperty(playlist.platform);
                             expect(playlist).toHaveProperty('url');
                             expect(playlist.url).toEqual(expect.stringContaining(musicPlatforms[playlist.platform]));
-                        })
-                    })
-                })
+                        });
+                    });
+                });
 
                 test('has a "tracks" array', () => {
                     let tracks;
@@ -339,7 +339,7 @@ describe('Music credits', () => {
                     }
                     expect(tracks).toBeDefined();
                     expect(tracks).toBeInstanceOf(Array);
-                })
+                });
 
                 describe('Tracks', () => {
                     let tracks;
@@ -350,31 +350,31 @@ describe('Music credits', () => {
                         } catch (error) {
                             tracks = null;
                         }
-                    })
+                    });
 
                     test('at least one track is defined', () => {
                         expect(tracks.length).toBeGreaterThan(0);
-                    })
+                    });
 
                     test('one track mean no playlists', () => {
                         if (tracks.length === 1) {
                             expect(links.playlists.length).toBe(0);
                         }
-                    })
+                    });
 
                     test('each track has a unique number', () => {
                         const uniqueNumbers = [];
                         tracks.forEach((track) => {
                             expect(track).toHaveProperty('order');
                             expect(uniqueNumbers).not.toContain(track.order);
-                        })
-                    })
+                        });
+                    });
 
                     test('each track has a name', () => {
                         tracks.forEach((track) => {
                             expect(track).toHaveProperty('name');
-                        })
-                    })
+                        });
+                    });
 
                     test('each track has at least one valid platform', () => {
                         tracks.forEach((track) => {
@@ -385,11 +385,11 @@ describe('Music credits', () => {
                             platforms.forEach((plat) => {
                                 expect(musicPlatforms).toHaveProperty(plat);
                                 expect(url[plat]).toEqual(expect.stringContaining(musicPlatforms[plat]));
-                            })
-                        })
-                    })
-                })
-            })
+                            });
+                        });
+                    });
+                });
+            });
 
             test('has an "id" attribute', () => {
                 let id;
@@ -399,7 +399,7 @@ describe('Music credits', () => {
                     id = null;
                 }
                 expect(id).toBeTruthy();
-            })
+            });
 
             describe('Id', () => {
                 test('is unique', () => {
@@ -408,8 +408,8 @@ describe('Music credits', () => {
                     expect(ids).not.toContainEqual(id);
 
                     ids.push(id);
-                })
-            })
-        })
-    })
-})
+                });
+            });
+        });
+    });
+});

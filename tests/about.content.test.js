@@ -13,7 +13,7 @@ function getLocales() {
     let localeList = [];
     localeObject.forEach(element => {
         localeList.push(element.code);
-    })
+    });
     return localeList;
 }
 
@@ -24,7 +24,7 @@ describe('About page', () => {
         const aboutPage = folderPath + '/' + locale + '.md';
 
         expect(fs.existsSync(aboutPage)).toEqual(true);
-    })
+    });
 
     test('each locale has similar length', async () => {
         const lengths = [];
@@ -39,5 +39,5 @@ describe('About page', () => {
                 expect(Math.abs(Math.log10(l1) - Math.log10(l2))).toBeLessThan(0.25);
             }
         }
-    })
+    });
 })
