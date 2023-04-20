@@ -56,6 +56,15 @@ test('No articles have the same createdAt attribute', async () => {
     expect(new Set(dates).size).toEqual(dates.length);
 });
 
+test('No articles have the same filename', () => {
+    const names = [];
+    for (const article of getTreeList('./content/articles/en-us')) {
+        const articlePath = path.join('./content/articles/en-us', article);
+        names.push(path.basename(articlePath));
+    }
+    expect(new Set(names).size).toEqual(names.length);
+});
+
 describe('Articles', () => {
     const articles = getTreeList('./content/articles/en-us');
 
