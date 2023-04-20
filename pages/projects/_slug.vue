@@ -30,7 +30,8 @@ export default {
         }
         page = page.at(0);
         let date = new Date(page.createdAt);
-        date = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+        const months = context.app.i18n.t('utils.months');
+        date = `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
         return {page, date};
     }
 }

@@ -59,7 +59,8 @@ export default {
         },
         articleDate() {
             const date = new Date(this.article.createdAt);
-            return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+            const months = this.$t('utils.months');
+            return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
         },
         imgAlt() {
             return this.$t('altText.articleImgAlt').concat(' ', this.data.title);
