@@ -36,6 +36,8 @@ export default {
     width: 70vw;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .about-section {
