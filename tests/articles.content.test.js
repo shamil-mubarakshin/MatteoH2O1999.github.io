@@ -139,5 +139,11 @@ describe('Articles', () => {
                 }
             }
         });
+
+        test('has an excerpt in all locales', () => {
+            for (const locale of locales) {
+                expect(articleLocales[locale].excerpt).toBeTruthy();
+            }
+        })
     });
 });
