@@ -96,7 +96,7 @@ export default {
     flex-grow: 0;
 }
 
-@media screen and (max-width:640px) {
+@media screen and (max-width: 640px) {
     .info-window-content {
         flex-direction: column;
         align-items: center;

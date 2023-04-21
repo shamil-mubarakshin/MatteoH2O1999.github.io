@@ -101,7 +101,7 @@ export default {
     display: block;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
     .nav-bar ul {
         flex-direction: column;
         height: fit-content;
