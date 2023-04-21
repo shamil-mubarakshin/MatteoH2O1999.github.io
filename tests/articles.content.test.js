@@ -129,5 +129,15 @@ describe('Articles', () => {
                 }
             }
         });
+
+        test('has the same existing preview image in all locales', () => {
+            for (const locale1 of locales) {
+                expect(articleLocales[locale1].previewImg).toBeTruthy();
+                expect(fs.existsSync(path.join('./static', articleLocales[locale1].previewImg))).toBe(true);
+                for (const locale2 of locales) {
+                    expect(articleLocales[locale1].previewImg).toEqual(articleLocales[locale2].previewImg);
+                }
+            }
+        });
     });
 });
