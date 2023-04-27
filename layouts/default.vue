@@ -28,6 +28,14 @@ body {
     margin: 0;
 }
 
+.bold-test {
+    font-weight: bold;
+}
+
+.semi-bold-text {
+    font-weight: 600;
+}
+
 .layout-wrapper {
     min-height: 100vh;
     display: flex;
