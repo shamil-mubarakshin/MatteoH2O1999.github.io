@@ -13,7 +13,7 @@
         head() {
             return {
                 link: [
-                    {rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Merriweather&display=swap", body: true}
+                    {rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap", body: true}
                 ]
             }
         }
