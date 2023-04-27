@@ -36,7 +36,8 @@ describe('About page', () => {
         }
         for (const l1 of lengths) {
             for (const l2 of lengths) {
-                expect(Math.abs(Math.log10(l1) - Math.log10(l2))).toBeLessThan(0.25);
+                const ratio = l1 > l2 ? l1 / l2 : l2 / l1;
+                expect(ratio).toBeLessThan(1.25);
             }
         }
     });
