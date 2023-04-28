@@ -1,5 +1,5 @@
 <template>
-    <div class="social-icons">
+    <footer class="social-icons">
         <ul>
             <li>
                 <a href="https://www.youtube.com/channel/UCwYnDSpaMPxS6kJpy8vQgNw" target="_blank" :aria-label="$t('altText.youtubeSocialLogo')">
@@ -15,7 +15,7 @@
         <div class="copyright-notice">
             {{ $t('navbar.copyright') }}
         </div>
-    </div>
+    </footer>
 </template>
 
 <script>
