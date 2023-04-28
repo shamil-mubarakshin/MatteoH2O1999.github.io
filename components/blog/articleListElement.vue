@@ -90,6 +90,11 @@ export default {
     width: 100%;
     height: 100%;
     aspect-ratio: auto 1 / 1;
+    transition-duration: 0.25s;
+}
+
+a:hover .article-image-wrapper .article-image-card, a:focus .article-image-wrapper .article-image-card {
+    scale: 1.15;
 }
 
 .music-article .article-image-card {
