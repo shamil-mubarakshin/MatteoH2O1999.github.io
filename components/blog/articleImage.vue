@@ -32,5 +32,7 @@ export default {
 .figure-description {
     margin: auto;
     width: 95%;
+    font-style: italic;
+    font-size: 15px;
 }
 </style>
