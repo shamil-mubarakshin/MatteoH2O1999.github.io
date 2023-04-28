@@ -36,7 +36,7 @@ export default {
 .copyright-notice {
     color: var(--darker-white);
     text-align: center;
-    margin: 0px 10px 20px;
+    margin: 0px 10px 10px;
     font-size: 12px;
 }
 
@@ -54,6 +54,7 @@ export default {
     padding: 0;
     color: var(--darker-white);
     transition-duration: 0.25s;
+    margin: 1em 10px 0px;
 }
 
 .social-icons ul:hover {
