@@ -36,6 +36,10 @@ body {
     font-weight: 600;
 }
 
+.blue-text {
+    color: var(--light-blue);
+}
+
 .layout-wrapper {
     min-height: 100vh;
     display: flex;
