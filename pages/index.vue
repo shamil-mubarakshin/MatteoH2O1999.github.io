@@ -21,7 +21,10 @@ export default {
     },
     head() {
         return {
-            title: "[WIP] Matteo Dell'Acqua"
+            title: "[WIP] Matteo Dell'Acqua",
+            link: [
+                {rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap", body: true}
+            ]
         }
     },
     methods: {
@@ -44,6 +47,7 @@ export default {
     transform: translateX(3vw);
     opacity: 0;
     font-size: 3vw;
+    font-family: "Permanent Marker", Arial, Helvetica, sans-serif;
 }
 
 .main-page-central-photo {
