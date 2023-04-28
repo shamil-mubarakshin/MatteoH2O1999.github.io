@@ -28,7 +28,7 @@ body {
     margin: 0;
 }
 
-.bold-test {
+.bold-text {
     font-weight: bold;
 }
 
