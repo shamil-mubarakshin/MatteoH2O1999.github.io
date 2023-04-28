@@ -13,7 +13,10 @@
         head() {
             return {
                 link: [
-                    {rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap", body: true}
+                    {rel: "preconnect", href: "https://fonts.googleapis.com"},
+                    {rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: true},
+                    {rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap", body: true},
+                    {rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap", body: true}
                 ]
             }
         }
@@ -22,10 +25,16 @@
 
 <style>
 body {
-    font-family: Merriweather, Arial, Helvetica, sans-serif;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
     color: white;
     background-color: var(--dark-blue);
     margin: 0;
+    line-height: 150%;
+}
+
+body h1, body h2, body h3, body h4, body h5, body h6 {
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    line-height: initial;
 }
 
 .bold-text {
