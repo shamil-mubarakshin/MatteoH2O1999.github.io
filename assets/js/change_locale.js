@@ -1,6 +1,16 @@
-export function showLocaleSelector() {
-    document.getElementById("language-menu").classList.toggle("show");
-    document.getElementById("shadow-menu").classList.toggle("show");
+export function showLocaleSelector(to) {
+    if (to === undefined) {
+        document.getElementById("language-menu").classList.toggle("show");
+        document.getElementById("shadow-menu").classList.toggle("show");
+    } else {
+        if (to) {
+            document.getElementById("language-menu").classList.add("show");
+            document.getElementById("shadow-menu").classList.add("show");
+        } else {
+            document.getElementById("language-menu").classList.remove("show");
+            document.getElementById("shadow-menu").classList.remove("show");
+        }
+    }
 }
 
 export function showActiveLocale(localeCode) {

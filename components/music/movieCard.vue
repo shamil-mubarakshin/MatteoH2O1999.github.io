@@ -34,6 +34,12 @@ export default {
             if (keyCode === 13 || keyCode === 32) {
                 this.showInfo();
             }
+        },
+        handleCloseWindow(event) {
+            const keyCode = event.keyCode;
+            if (keyCode === 27) {
+                this.hideInfo();
+            }
         }
     },
     mounted() {
@@ -46,6 +52,7 @@ export default {
             }
             setTimeout(() => {this.showInfo()}, 250);
         }
+        addEventListener('keydown', this.handleCloseWindow);
     },
     beforeDestroy() {
         this.hideInfo();

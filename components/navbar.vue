@@ -58,15 +58,22 @@ export default {
     mounted() {
         active_page.updateActivePage();
         change_locale.showActiveLocale(this.$i18n.locale);
+        addEventListener('keydown', this.handleKeyDown);
     },
     methods: {
-        showLocaleSelector() {
-            change_locale.showLocaleSelector();
+        showLocaleSelector(to) {
+            change_locale.showLocaleSelector(to);
         },
         setLocale(locale) {
             this.showLocaleSelector();
             this.$i18n.setLocale(locale);
             change_locale.showActiveLocale(locale);
+        },
+        handleKeyDown(event) {
+            const keyCode = event.keyCode;
+            if (keyCode === 27) {
+                this.showLocaleSelector(false);
+            }
         }
     },
     watch: {
