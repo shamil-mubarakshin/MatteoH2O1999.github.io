@@ -93,15 +93,15 @@ describe('Articles', () => {
         test('uses the same existing images in all locales', () => {
             const images = [];
             for (const locale of locales) {
-                const imgs = []
-                const elements = [articleLocales[locale].body]
+                const imgs = [];
+                const elements = [articleLocales[locale].body];
                 for (const element of elements) {
                     if (element.type === 'element' && element.tag === 'blog-article-image') {
                         const props = element.props;
                         expect(props).toBeTruthy();
                         expect(typeof props.alt).toEqual('string');
                         expect(props.alt).toBeTruthy();
-                        expect(typeof props.description).toEqual('string')
+                        expect(typeof props.description).toEqual('string');
                         expect(props.description).toBeTruthy();
                         expect(typeof props['img-path']).toEqual('string');
                         expect(props['img-path']).toBeTruthy();
@@ -145,6 +145,6 @@ describe('Articles', () => {
             for (const locale of locales) {
                 expect(articleLocales[locale].excerpt).toBeTruthy();
             }
-        })
+        });
     });
 });
