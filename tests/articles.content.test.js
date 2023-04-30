@@ -146,5 +146,22 @@ describe('Articles', () => {
                 expect(articleLocales[locale].excerpt).toBeTruthy();
             }
         });
+
+        test('has no h1 in any locale', () => {
+            for (const locale of locales) {
+                const h1s = [];
+                const elements = [articleLocales[locale].body];
+                for (const element of elements) {
+                    if (element.type === 'element' && element.tag === 'h1') {
+                        h1s.push(element);
+                    }
+                    const children = element.children;
+                    if (children) {
+                        elements.push(...children);
+                    }
+                }
+                expect(h1s).toEqual([]);
+            }
+        });
     });
 });
