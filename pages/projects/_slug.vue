@@ -46,6 +46,10 @@ export default {
     width: 100%;
 }
 
+.blog-article h1 {
+    font-size: 2em;
+}
+
 .blog-article-date {
     font-style: italic;
 }

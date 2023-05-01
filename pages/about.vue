@@ -40,6 +40,10 @@ export default {
     margin-bottom: 20px;
 }
 
+.about-article h1 {
+    font-size: 2em;
+}
+
 .about-section {
     display: flex;
     flex-direction: row;
