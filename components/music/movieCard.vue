@@ -52,10 +52,11 @@ export default {
             }
             setTimeout(() => {this.showInfo()}, 250);
         }
-        addEventListener('keydown', this.handleCloseWindow);
+        window.addEventListener('keydown', this.handleCloseWindow);
     },
     beforeDestroy() {
         this.hideInfo();
+        window.removeEventListener('keydown', this.handleCloseWindow);
     },
     computed: {
         altCard() {

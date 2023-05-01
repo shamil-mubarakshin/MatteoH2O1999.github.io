@@ -58,7 +58,7 @@ export default {
     mounted() {
         active_page.updateActivePage();
         change_locale.showActiveLocale(this.$i18n.locale);
-        addEventListener('keydown', this.handleKeyDown);
+        window.addEventListener('keydown', this.handleKeyDown);
     },
     methods: {
         showLocaleSelector(to) {
@@ -81,6 +81,9 @@ export default {
             active_page.updateActivePage();
             change_locale.showActiveLocale(this.$i18n.locale);
         }
+    },
+    beforeDestroy() {
+        window.removeEventListener('keydown', this.handleKeyDown);
     }
 }
 </script>
