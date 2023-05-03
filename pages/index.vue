@@ -24,6 +24,9 @@ export default {
             title: "[WIP] Matteo Dell'Acqua",
             link: [
                 {rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap", body: true}
+            ],
+            meta: [
+                {name: 'description', hid: 'description', content: this.$t('descriptions.index')}
             ]
         }
     },

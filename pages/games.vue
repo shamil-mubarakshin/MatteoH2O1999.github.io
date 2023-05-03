@@ -11,7 +11,10 @@ export default {
     },
     head() {
         return {
-            title: "[WIP] Matteo Dell'Acqua | Games"
+            title: "[WIP] Matteo Dell'Acqua | Games",
+            meta: [
+                {name: 'description', hid: 'description', content: this.$t('descriptions.games')}
+            ]
         }
     }
 }

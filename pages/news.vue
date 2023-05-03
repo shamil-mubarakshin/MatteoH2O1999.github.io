@@ -14,7 +14,10 @@ export default {
     },
     head() {
         return {
-            title: `[WIP] Matteo Dell'Acqua | ${this.$t('navbar.news')}`
+            title: `[WIP] Matteo Dell'Acqua | ${this.$t('navbar.news')}`,
+            meta: [
+                {name: 'description', hid: 'description', content: this.$t('descriptions.news')}
+            ]
         }
     },
     async asyncData(context) {
