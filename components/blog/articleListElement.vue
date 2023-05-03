@@ -123,7 +123,7 @@ a:hover .article-image-wrapper .article-image-card, a:focus .article-image-wrapp
         max-width: 90vw;
     }
 
-    .article-image-wrapper {
+    .article-wrapper > a {
         display: none;
     }
 
