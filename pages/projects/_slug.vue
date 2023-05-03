@@ -15,7 +15,10 @@ export default {
     },
     head() {
         return {
-            title: `[WIP] Matteo Dell'Acqua | ${this.page.title}`
+            title: `[WIP] Matteo Dell'Acqua | ${this.page.title}`,
+            meta: [
+                {name: 'description', hid: 'description', content: this.excerpt}
+            ]
         }
     },
     async asyncData(context) {
@@ -32,7 +35,22 @@ export default {
         let date = new Date(page.createdAt);
         const months = context.app.i18n.t('utils.months');
         date = `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-        return {page, date};
+        const elements = [page.excerpt];
+        const texts = [];
+        for (const element of elements) {
+            if (element.type === 'text') {
+                texts.push(element.value);
+            }
+            const children = element.children;
+            if (children) {
+                elements.push(...children);
+            }
+        }
+        if (texts.length !== 1 || !texts[0]) {
+            context.error({statusCode: 500, message: 'Unexpected error. Could not find excerpt text.'});
+        }
+        const excerpt = texts[0];
+        return {page, date, excerpt};
     }
 }
 </script>
