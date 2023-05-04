@@ -90,9 +90,9 @@ export default {
 
 <style>
 .nav-bar {
-    background-color: var(--medium-blue);
+    background-color: black;
+    color: var(--darker-white);
     padding: 10px;
-    box-shadow: 0px 0px 4px 4px var(--dark-blue-shadow);
     font-size: 18px;
 }
 
@@ -188,6 +188,7 @@ li.active .navbar-hover-effect, .navbar-hover-effect.active {
     display: none;
     position: absolute;
     background-color: var(--medium-blue);
+    color: white;
     z-index: 2;
     padding: 20px;
     border-radius: 10px;
