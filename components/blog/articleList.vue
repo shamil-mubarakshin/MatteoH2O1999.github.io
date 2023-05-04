@@ -1,6 +1,6 @@
 <template>
     <div class="list-wrapper">
-        <BlogArticleListElement v-for="article in this.articles" :key="article.id" :article="article"/>
+        <BlogArticleListElement v-for="article in this.articles" :key="article.createdAt" :article="article"/>
     </div>
 </template>
 
