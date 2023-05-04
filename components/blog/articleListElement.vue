@@ -94,7 +94,7 @@ export default {
 }
 
 a:hover .article-image-wrapper .article-image-card, a:focus .article-image-wrapper .article-image-card {
-    scale: 1.15;
+    transform: scale(1.15);
 }
 
 .music-article .article-image-card {
