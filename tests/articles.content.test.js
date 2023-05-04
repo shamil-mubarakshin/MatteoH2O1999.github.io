@@ -53,6 +53,11 @@ test('No articles have the same createdAt attribute', async () => {
         const parsedArticle = await markdown.toJSON(fs.readFileSync(articlePath, {encoding: 'utf-8'}));
         dates.push(parsedArticle.createdAt);
     }
+    for (const article of getTreeList('./content/music')) {
+        const articlePath = path.join('./content/music', article);
+        const parsedArticle = await markdown.toJSON(fs.readFileSync(articlePath, {encoding: 'utf-8'}));
+        dates.push(parsedArticle.createdAt);
+    }
     expect(new Set(dates).size).toEqual(dates.length);
 });
 
