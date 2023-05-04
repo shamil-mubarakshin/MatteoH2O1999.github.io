@@ -2,15 +2,15 @@
     <div>
         <h3 v-if="this.playlists.length > 0">
             {{ $t('musicCreditsTabs.listen') }}
-            <MusicLinkIcon v-for="playlist in this.playlists" :key="playlist.id" class="playlist-link" :platform="playlist.platform" :url="playlist.url"/>
+            <MusicLinkIcon v-for="(playlist, index) in this.playlists" :key="playlist.url" class="playlist-link" :platform="playlist.platform" :url="playlist.url" :title="playlist.name || `Playlist ${index + 1}`"/>
         </h3>
         <h3 v-else>
             {{ $t('musicCreditsTabs.listen') }}
-            <MusicLinkIcon v-for="platform in Object.keys(tracks[0].url)" :key="platform.id" class="playlist-link" :platform="platform" :url="tracks[0].url[platform]" />
+            <MusicLinkIcon v-for="platform in Object.keys(tracks[0].url)" :key="platform" class="playlist-link" :platform="platform" :url="tracks[0].url[platform]" :title="tracks[0].name" />
         </h3>
         <table v-if="this.playlists.length > 0" role="presentation">
             <tbody>
-                <tr v-for="track in this.tracks" :key="track.id">
+                <tr v-for="track in this.tracks" :key="track.name">
                     <td v-if="useExplicitTrackNumbers">
                         {{ track.order }}
                     </td>
@@ -18,7 +18,7 @@
                         {{ track.name }}
                     </td>
                     <td>
-                        <MusicLinkIcon class="track-link" v-for="platform in Object.keys(track.url)" :key="platform.id" :platform="platform" :url="track.url[platform]"/>
+                        <MusicLinkIcon class="track-link" v-for="platform in Object.keys(track.url)" :key="platform" :platform="platform" :url="track.url[platform]" :title="track.name"/>
                     </td>
                 </tr>
             </tbody>

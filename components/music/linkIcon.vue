@@ -1,5 +1,5 @@
 <template>
-    <a :href="this.url" target="_blank">
+    <a :href="this.url" target="_blank" :aria-label="this.label">
         <font-awesome-icon icon="fa-brands fa-youtube" v-if="this.platform === 'Youtube'" class="youtube-link"></font-awesome-icon>
         <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" v-else></font-awesome-icon>
     </a>
@@ -12,7 +12,16 @@ export default {
             name: 'linkIcon'
         }
     },
-    props: ['url', 'platform']
+    props: ['url', 'platform', 'title'],
+    computed: {
+        label() {
+            let label = this.title;
+            if (!label) {
+                label = 'Playlist';
+            }
+            return this.platform.concat(': ', label, ' ', this.$t('tabWarning'));
+        }
+    }
 }
 </script>
 
