@@ -1,7 +1,7 @@
 <template>
-    <div class="author-age">
+    <span class="author-age">
         {{ this.age }}
-    </div>
+    </span>
 </template>
 
 <script>
@@ -26,9 +26,3 @@ export default {
     }
 }
 </script>
-
-<style>
-.author-age {
-    display: inline;
-}
-</style>
