@@ -4,6 +4,7 @@ import { musicBlog_it_it } from './blog/musicBlog'
 import { staticAlt_it_it } from './staticAltImages/staticAltImages'
 import { months_it_it } from './utils/months'
 import { descriptions_it_it } from './meta/descriptions'
+import { tab_it_it } from './utils/tabWarning'
 
 export default {
     navbar: navbar_it_it,
@@ -13,5 +14,6 @@ export default {
     utils: {
         months: months_it_it
     },
-    descriptions: descriptions_it_it
+    descriptions: descriptions_it_it,
+    tabWarning: tab_it_it
 }

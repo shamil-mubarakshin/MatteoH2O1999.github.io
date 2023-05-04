@@ -2,12 +2,12 @@
     <footer class="social-icons">
         <ul>
             <li>
-                <a href="https://www.youtube.com/channel/UCwYnDSpaMPxS6kJpy8vQgNw" target="_blank" :aria-label="$t('altText.youtubeSocialLogo')">
+                <a href="https://www.youtube.com/channel/UCwYnDSpaMPxS6kJpy8vQgNw" target="_blank" :aria-label="$t('altText.youtubeSocialLogo').concat(' ', $t('tabWarning'))">
                     <font-awesome-icon icon="fa-brands fa-youtube" class="social-icon youtube-social"></font-awesome-icon>
                 </a>
             </li>
             <li>
-                <a href="https://github.com/MatteoH2O1999" target="_blank" :aria-label="$t('altText.githubSocialLogo')">
+                <a href="https://github.com/MatteoH2O1999" target="_blank" :aria-label="$t('altText.githubSocialLogo').concat(' ', $t('tabWarning'))">
                     <font-awesome-icon icon="fa-brands fa-github" class="social-icon github-social"></font-awesome-icon>
                 </a>
             </li>
