@@ -27,6 +27,7 @@ export default {
     width: 100%;
     max-height: 90vh;
     object-fit: contain;
+    aspect-ratio: auto 1 / 1;
 }
 
 .figure-description {
