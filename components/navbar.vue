@@ -3,8 +3,8 @@
         <nav class="nav-bar" id="navigationBar">
             <ul>
                 <li class="logo">
-                    <NuxtLink :to="localePath('/')" id="indexRef">
-                        <Logo class="navbar-logo" :alt="$t('altText.navBarLogo')"/>
+                    <NuxtLink :to="localePath('/')" id="indexRef" :aria-label="$t('navbar.home')">
+                        <Logo class="navbar-logo" />
                     </NuxtLink>
                 </li>
                 <li>
