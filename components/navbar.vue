@@ -4,7 +4,7 @@
             <ul>
                 <li class="logo">
                     <NuxtLink :to="localePath('/')" id="indexRef">
-                        <nuxt-img format="webp" src="/navbar/logo.png" class="navbar-logo" :alt="$t('altText.navBarLogo')"/>
+                        <Logo class="navbar-logo" :alt="$t('altText.navBarLogo')"/>
                     </NuxtLink>
                 </li>
                 <li>
@@ -47,13 +47,18 @@
 </template>
 
 <script>
-import * as change_locale from "../assets/js/change_locale"
-import * as active_page from "../assets/js/active_page"
+import * as change_locale from "../assets/js/change_locale";
+import * as active_page from "../assets/js/active_page";
+import Logo from '../assets/svg/logo.svg?inline';
+
 export default {
     data() {
         return {
             name: "Navbar"
         }
+    },
+    components: {
+        Logo
     },
     mounted() {
         active_page.updateActivePage();
@@ -126,7 +131,7 @@ export default {
         margin: auto;
     }
 
-    .nav-bar ul li.logo a img {
+    .nav-bar ul li.logo a svg {
         height: auto;
         width: 100%;
         max-width: 200px;
@@ -164,10 +169,9 @@ li.active .navbar-hover-effect, .navbar-hover-effect.active {
     padding: 0 0;
 }
 
-.nav-bar ul li.logo img {
+.nav-bar ul li.logo svg {
     display: block;
     height: 100%;
-    width: auto;
     margin: 0;
 }
 

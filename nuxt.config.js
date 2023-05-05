@@ -49,7 +49,8 @@ export default {
   modules: [
     '@nuxt/image',
     '@nuxtjs/i18n',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/svg'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
