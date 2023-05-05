@@ -116,6 +116,24 @@ export default {
     display: block;
 }
 
+.nav-bar ul li.logo {
+    margin-right: auto;
+    height: inherit;
+    padding: 0px;
+}
+
+.nav-bar ul li.logo svg {
+    display: block;
+    height: 100%;
+    width: auto;
+    margin: 0;
+}
+
+.nav-bar li {
+    display: block;
+    padding: 6px;
+}
+
 @media screen and (max-width: 600px) {
     .nav-bar ul {
         flex-direction: column;
@@ -129,6 +147,7 @@ export default {
 
     .nav-bar ul li.logo {
         margin: auto;
+        padding: 6px;
     }
 
     .nav-bar ul li.logo a svg {
@@ -140,11 +159,6 @@ export default {
     .nav-bar li a.navbar-hover-effect, .dropdown-locale {
         padding: 3px;
     }
-}
-
-.nav-bar li {
-    display: block;
-    padding: 6px;
 }
 
 .navbar-hover-effect {
@@ -161,18 +175,6 @@ export default {
 
 li.active .navbar-hover-effect, .navbar-hover-effect.active {
     color: var(--light-blue);
-}
-
-.nav-bar ul li.logo {
-    margin-right: auto;
-    height: inherit;
-    padding: 0 0;
-}
-
-.nav-bar ul li.logo svg {
-    display: block;
-    height: 100%;
-    margin: 0;
 }
 
 .localeSelector {
