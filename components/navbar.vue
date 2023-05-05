@@ -134,7 +134,7 @@ export default {
     .nav-bar ul li.logo a svg {
         height: auto;
         width: 100%;
-        max-width: 200px;
+        max-width: 120px;
     }
 
     .nav-bar li a.navbar-hover-effect, .dropdown-locale {
