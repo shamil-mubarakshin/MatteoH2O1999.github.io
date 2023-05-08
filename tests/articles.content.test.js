@@ -146,9 +146,9 @@ describe('Articles', () => {
             }
         });
 
-        test('has an excerpt in all locales', () => {
+        test('has an excerpt in all locales ("summary" property in front matter)', () => {
             for (const locale of locales) {
-                expect(articleLocales[locale].excerpt).toBeTruthy();
+                expect(articleLocales[locale].summary).toBeTruthy();
             }
         });
 

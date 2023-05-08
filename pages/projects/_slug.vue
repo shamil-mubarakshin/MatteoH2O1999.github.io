@@ -35,21 +35,10 @@ export default {
         let date = new Date(page.createdAt);
         const months = context.app.i18n.t('utils.months');
         date = `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-        const elements = [page.excerpt];
-        const texts = [];
-        for (const element of elements) {
-            if (element.type === 'text') {
-                texts.push(element.value);
-            }
-            const children = element.children;
-            if (children) {
-                elements.push(...children);
-            }
-        }
-        if (texts.length !== 1 || !texts[0]) {
+        const excerpt = page.summary;
+        if (!excerpt) {
             context.error({statusCode: 500, message: 'Unexpected error. Could not find excerpt text.'});
         }
-        const excerpt = texts[0];
         return {page, date, excerpt};
     }
 }

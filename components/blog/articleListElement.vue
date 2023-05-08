@@ -12,7 +12,9 @@
             <div class="article-date">
                 {{ this.articleDate }}
             </div>
-            <nuxt-content v-if="this.data.excerpt" :document="{body: this.data.excerpt}" />
+            <p v-if="this.data.excerpt">
+                {{ this.data.excerpt }}
+            </p>
             <p v-else>
                 {{$t('musicBlog.listen')}}
             </p>
@@ -38,7 +40,7 @@ function getMusicExcerpt(article, instance) {
 function getArticleExcerpt(article) {
     return {
         title: article.title,
-        excerpt: article.excerpt,
+        excerpt: article.summary,
         img: article.previewImg,
         url: `/projects/${article.slug}`
     }

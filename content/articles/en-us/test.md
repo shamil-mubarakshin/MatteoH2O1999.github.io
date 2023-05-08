@@ -2,9 +2,8 @@
 title: Test
 previewImg: /music/cards/movies/spongebob_movie_rehydrated.jpg
 createdAt: "2023-03-20T00:00:00Z"
+summary: test article
 ---
-test article
-<!--more-->
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet felis non tortor maximus varius. Vestibulum et sapien ac ante tempus rhoncus. In at tellus quis odio facilisis vehicula at cursus dolor. Quisque tincidunt cursus mauris, sed malesuada magna varius vitae. Aenean turpis felis, fringilla eget tempor sit amet, euismod ut felis. Donec auctor euismod tellus sed accumsan. Maecenas tempor turpis sed arcu aliquet, in pretium metus rutrum. Fusce lacinia, nisl at fringilla dictum, risus nibh rhoncus neque, a lacinia erat diam ut metus. Aliquam erat volutpat. Quisque in mollis nulla, at vulputate nisi. Ut porttitor ligula odio, in bibendum justo suscipit vel. Donec vestibulum quis risus vitae tincidunt. Nunc tempor massa ac felis ullamcorper, quis accumsan quam condimentum. Nullam pretium metus ac magna dictum, pulvinar semper nunc iaculis. Maecenas id turpis convallis, tincidunt odio in, dignissim metus. Aenean at nunc semper, volutpat sem eget, venenatis diam.
 
 Aenean sed velit sit amet mauris viverra lacinia. Ut metus sapien, pulvinar sed ex in, consequat euismod enim. Donec iaculis ipsum sodales arcu ornare, vel vestibulum leo blandit. Integer fringilla lacinia quam, sed feugiat orci commodo id. Fusce tincidunt porttitor vestibulum. In eleifend lacus orci, vestibulum volutpat augue sodales nec. Cras non lacinia ipsum. Duis congue, mi ac pellentesque facilisis, mi mauris accumsan risus, eu euismod ipsum purus vitae elit. Donec pellentesque sapien massa. Vestibulum id auctor elit, a fermentum est. Aliquam erat volutpat. Donec at erat fringilla leo viverra sodales. Pellentesque placerat, nibh quis interdum faucibus, ipsum sem posuere nisi, vitae maximus nibh turpis in tortor. Aenean ultricies erat vitae tincidunt ultrices. Aliquam fermentum diam non eros convallis faucibus. Cras risus elit, dignissim id tortor vitae, consequat suscipit velit.
