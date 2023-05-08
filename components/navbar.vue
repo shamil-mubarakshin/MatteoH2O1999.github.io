@@ -127,6 +127,7 @@ export default {
     height: 100%;
     width: auto;
     margin: 0;
+    text-decoration: none;
 }
 
 .nav-bar li {
