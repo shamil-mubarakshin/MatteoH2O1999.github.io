@@ -58,7 +58,7 @@ export default {
 <style>
 .blog-article {
     max-width: 50vw;
-    margin: auto;
+    margin: auto auto 25px;
     text-align: left;
     min-width: min(85vw, 600px);
     width: 100%;
