@@ -11,10 +11,47 @@ env:
   PR_AUTHOR: ${{ github.event.pull_request.user.login }}
   NODE_VERSION: 18
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
+  clean:
+    name: Clean contribution if not authorized
+    runs-on: ubuntu-latest
+    outputs:
+      authorized: ${{ steps.emit.outputs.result }}
+    steps:
+      - name: Emit output
+        uses: actions/github-script@v6
+        id: emit
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const author = process.env['PR_AUTHOR']
+            let result
+            core.info(`Pull request author is ${author}`)
+            if (author === 'MatteoH2O1999' || author === 'dependabot[bot]'){
+              core.info('Author is allowed to contribute')
+              result = true
+            } else {
+              core.info('Author is not allowed to contribute')
+              core.info('Closing PR...')
+              result = false
+            }
+            return result
+      - name: Clean contribution
+        if: ${{ steps.emit.outputs.result == 'false' }}
+        uses: dessant/repo-lockdown@v3
+        with:
+          pr-comment: This repository is a personal website and as such it does not accept pull requests.
+          log-output: true
+
   test:
     name: Test website
     runs-on: ubuntu-latest
+    if: ${{ needs.clean.outputs.authorized == 'true' }}
+    needs: clean
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -35,7 +72,7 @@ jobs:
   build:
     name: Test build website
     runs-on: ubuntu-latest
-    needs: test
+    needs: clean
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -45,23 +82,49 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
       - name: Install production dependencies
         run: npm ci --omit=dev
       - name: Test build with Nuxt
         run: npm run generate
-
-  clean:
-    name: Clean contribution if not authorized
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Detect pull request author
-        run: echo "Pull request author is $PR_AUTHOR"
-      - name: Clean contribution
-        if: ${{ env.PR_AUTHOR != 'MatteoH2O1999' && env.PR_AUTHOR != 'dependabot[bot]' }}
-        uses: dessant/repo-lockdown@v3
+      - name: Upload generated pages
+        uses: actions/upload-artifact@v3
         with:
-          pr-comment: This repository is a personal website and as such it does not accept pull requests.
-          log-output: true
+          path: dist/
+          name: pages
+          retention-days: 1
 
+  screenshots:
+      name: Generate screenshots
+      runs-on: ${{ matrix.os }}
+      strategy:
+        matrix:
+          os: [ubuntu-latest, macos-latest]
+        fail-fast: false
+      needs: [build, test]
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v3
+          with:
+            submodules: 'recursive'
+        - name: Download generated pages
+          uses: actions/download-artifact@v3
+          with:
+            name: pages
+            path: dist
+        - name: Setup node
+          uses: actions/setup-node@v3
+          with:
+            node-version: ${{ env.NODE_VERSION }}
+            cache: 'npm'
+        - name: Install production and development dependencies
+          run: npm ci --include=dev
+        - name: Generate screenshots
+          id: screenshots
+          run: npm run screenshots
+        - name: Upload screenshots
+          if: ${{ steps.screenshots.outputs.screenshots != '' }}
+          uses: actions/upload-artifact@v3
+          with:
+            retention-days: 1
+            name: ${{ steps.screenshots.outputs.artifact_name }}
+            path: ${{ steps.screenshots.outputs.screenshots }}
