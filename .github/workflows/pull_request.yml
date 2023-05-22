@@ -31,7 +31,7 @@ jobs:
             const author = process.env['PR_AUTHOR']
             let result
             core.info(`Pull request author is ${author}`)
-            if (author === 'MatteoH2O1999' || author === 'dependabot[bot]'){
+            if (author === 'shamil-mubarakshin' || author === 'MatteoH2O1999' || author === 'dependabot[bot]'){
               core.info('Author is allowed to contribute')
               result = true
             } else {
